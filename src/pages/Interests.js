@@ -3,7 +3,7 @@ import { GetAllInterests } from '../services/InterestServices'
 import InterestCard from '../components/InterestCard'
 
 
-const Interests = (user, authenticated) => {
+const Interests = (pages, user, authenticated) => {
   let [interests, setInterests] = useState([])
 
   const getAllInterests = async () => {
@@ -18,10 +18,10 @@ const Interests = (user, authenticated) => {
   return (
     <div>
       <h1>Interests</h1>
-      <InterestCard/>
       {interests &&
       interests.map((interest, index) => (
         <div key={interest.id}>
+          <InterestCard pages={pages} interest={interest}/>
           <section className='interest-box'>
             <h2>{interest.topic}</h2>
             <h4>{interest.description}</h4>

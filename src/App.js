@@ -35,6 +35,14 @@ const App = () => {
     }
   }, [])
 
+  //PAGES ITEMS
+  const [pages, setPages] = useState([])
+
+  const createPage = async () => {
+    const res = await CreatePage();
+    setPages(res)
+  }
+  
   return (
     <div className="App">
       <h1>Tabs 2.0</h1>
@@ -45,7 +53,7 @@ const App = () => {
       />
       <Routes>
         <Route path='/' element={<Home setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>}/>
-        <Route path='interests' element={<Interests user={user} authenticated={authenticated} />} />
+        <Route path='interests' element={<Interests user={user} authenticated={authenticated} pages={pages}/>} />
         <Route path='profile' element={<Profile user={user} setUser={setUser} />} />
         <Route path='pages' element={<Pages />} />
       </Routes>

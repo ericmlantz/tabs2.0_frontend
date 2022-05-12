@@ -1,6 +1,6 @@
-import React from 'react'
+import CreatePage from "./CreatePage"
 
-const InterestCard = () => {
+const InterestCard = ({pages, interest}) => {
 
   return (
     <div>
@@ -20,6 +20,9 @@ const InterestCard = () => {
         <button>Make New Page Button</button>
         <div>
           <h4>Page 1</h4>
+
+          <CreatePage pages={pages} interest={interest}/>
+
           <p>URL Displayed</p>
           <img src='https://websavers.ca/wp-content/uploads/2014/02/preview-website-plesk-wordpress-websavers.jpg' alt='website preview' />
           <section className='Notes'>
