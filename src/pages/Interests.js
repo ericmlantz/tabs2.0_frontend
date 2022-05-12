@@ -1,18 +1,26 @@
 import { useState, useEffect } from 'react'
 import { GetAllInterests } from '../services/InterestServices'
 import InterestCard from '../components/InterestCard'
+import { GetAllPages } from '../services/PageServices'
 
 
-const Interests = (pages, user, authenticated) => {
+const Interests = (user, authenticated) => {
   let [interests, setInterests] = useState([])
+  let [pages, setPages] = useState([])
 
   const getAllInterests = async () => {
     const res = await GetAllInterests();
     setInterests(res)
   }
+  const getAllPages = async () => {
+    const res = await GetAllPages();
+    setPages(res)
+    console.log(res)
+  }
 
   useEffect(() => {
     getAllInterests()
+    getAllPages()
   }, [])
 
   return (
@@ -21,13 +29,21 @@ const Interests = (pages, user, authenticated) => {
       {interests &&
       interests.map((interest, index) => (
         <div key={interest.id}>
-          <InterestCard pages={pages} interest={interest}/>
+          {/* <InterestCard interest={interest} pages={pages} getAllPages={getAllPages}/> */}
           <section className='interest-box'>
-            <h2>{interest.topic}</h2>
+            <h4>{interest.id}</h4>
+            <a href={`/interest/${interest.id}`}>{interest.topic}</a>
             <h4>{interest.description}</h4>
-            <li>
-              {interest.searches}
-            </li>
+            <ul>
+            {pages &&
+            pages.map((page, index) => (
+              page.interestId === interest.id
+               ? (<div className='interest-box'>
+                  <h1>{page.title}</h1>
+                </div>)
+                : null
+              ))}
+            </ul>
           </section>
         </div>
       ))}

@@ -9,3 +9,11 @@ export const CreatePage = async (data) => {
     }
   }
 
+export const GetAllPages = async () => {
+  try {
+    const res = await Client.get(`http://localhost:3001/pages/all`)
+    return res.data
+    } catch (error) {
+      throw error
+    }
+  }

@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 
-const Nav = ({ authenticated, user, handleLogOut }) => {
+const NavBar = ({ authenticated, user, handleLogOut }) => {
   let authenticatedOptions
   if (user) {
     authenticatedOptions = (
@@ -34,4 +34,4 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
   )
 }
 
-export default Nav
+export default NavBar

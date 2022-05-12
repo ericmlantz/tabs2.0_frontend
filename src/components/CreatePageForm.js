@@ -1,12 +1,15 @@
 import React from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { CreatePage } from '../services/PageServices'
 
-const CreatePage = ({pages, interest}) => {
 
+const CreatePageForm = (interest) => {
+  
+  const navigate = useNavigate()
   const [formValues, setFormValues] = useState({
     title: '',
     url: '',
-    interestId: 1,
   })
   const handleChange = (event) => {
     setFormValues({ ...formValues, [event.target.name]: event.target.value })
@@ -17,23 +20,23 @@ const CreatePage = ({pages, interest}) => {
     await CreatePage({
       title: formValues.title,
       url: formValues.url,
-      interestId: interest.id
     })
     setFormValues({
       title: '',
       url: '',
-      interestId: '',
     })
+    navigate('/interests')
   }
 
     return (
       <div className="page-form-wrapper">
-        <h1 className="create-page-header">Create New Page</h1>
+        <h1 className="X-page-header">Create New Page</h1>
         <br/>
         <form onSubmit={handleSubmit}>
           <div>
             <label><b>Page Title:</b></label>
             <input
+              name='title'
               type="text"
               value={formValues.title}
               placeholder="Page Title"
@@ -43,6 +46,7 @@ const CreatePage = ({pages, interest}) => {
           <div>
             <label><b>URL:</b></label>
             <input
+              name='url'
               type="text"
               value={formValues.url}
               placeholder="Logo Image URL"
@@ -56,4 +60,4 @@ const CreatePage = ({pages, interest}) => {
       </div>
     )
   }
-  export default CreatePage
+  export default CreatePageForm

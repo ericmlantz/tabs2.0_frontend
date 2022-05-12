@@ -1,9 +1,11 @@
 import './style/App.css';
 import Interests from './pages/Interests'
+import InterestCard from './components/InterestCard';
 import Pages from './pages/Pages'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
 import NavBar from './components/NavBar'
+import CreatePageForm from './components/CreatePageForm';
 
 import { Routes, Route } from 'react-router'
 import { useState, useEffect } from 'react'
@@ -36,12 +38,6 @@ const App = () => {
   }, [])
 
   //PAGES ITEMS
-  const [pages, setPages] = useState([])
-
-  const createPage = async () => {
-    const res = await CreatePage();
-    setPages(res)
-  }
   
   return (
     <div className="App">
@@ -53,9 +49,11 @@ const App = () => {
       />
       <Routes>
         <Route path='/' element={<Home setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>}/>
-        <Route path='interests' element={<Interests user={user} authenticated={authenticated} pages={pages}/>} />
+        <Route path='interests' element={<Interests user={user} authenticated={authenticated}/>} />
         <Route path='profile' element={<Profile user={user} setUser={setUser} />} />
         <Route path='pages' element={<Pages />} />
+        <Route path='createpage' element={<CreatePageForm />} />
+        <Route path='interest/:interestId' element={<InterestCard />}/>
       </Routes>
     </div>
   );
