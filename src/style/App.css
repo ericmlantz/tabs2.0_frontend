@@ -1,3 +1,12 @@
 .App {
   text-align: center;
 }
+
+.nav-link {
+  margin: 0 5px;
+}
+
+
+.interest-box {
+  border: black solid 1px;
+}
