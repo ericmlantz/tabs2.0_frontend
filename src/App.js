@@ -28,12 +28,16 @@ const App = () => {
     setUser(user)
     toggleAuthenticated(true)
   }
-
+  
+  const username = localStorage.getItem('username')
+  
   useEffect(() => {
     const token = localStorage.getItem('token')
+    
     // Check if token exists before requesting to validate the token
     if (token) {
       checkToken()
+      // console.log(username)
     }
   }, [])
 
@@ -48,12 +52,22 @@ const App = () => {
         handleLogOut={handleLogOut}
       />
       <Routes>
+        
         <Route path='/' element={<Home setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>}/>
+        
         <Route path='interests' element={<Interests user={user} authenticated={authenticated}/>} />
-        <Route path='profile' element={<Profile user={user} setUser={setUser} />} />
+        
+        <Route path='profile' element={<Profile 
+        
+        username={username}
+        
+        />} />
+        
         <Route path='pages' element={<Pages />} />
+        
         <Route path='createpage' element={<CreatePageForm />} />
-        <Route path='interest/:interestId' element={<InterestCard />}/>
+        
+        <Route path='/interests/:id' element={<InterestCard />}/>
       </Routes>
     </div>
   );

@@ -7,6 +7,7 @@ import { CreatePage } from '../services/PageServices'
 const CreatePageForm = (interest) => {
   
   const navigate = useNavigate()
+  
   const [formValues, setFormValues] = useState({
     title: '',
     url: '',

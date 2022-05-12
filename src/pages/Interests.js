@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect} from 'react'
 import { GetAllInterests } from '../services/InterestServices'
 import InterestCard from '../components/InterestCard'
 import { GetAllPages } from '../services/PageServices'
+import { Link } from 'react-router-dom'
 
 
 const Interests = (user, authenticated) => {
@@ -15,7 +16,6 @@ const Interests = (user, authenticated) => {
   const getAllPages = async () => {
     const res = await GetAllPages();
     setPages(res)
-    console.log(res)
   }
 
   useEffect(() => {
@@ -29,12 +29,11 @@ const Interests = (user, authenticated) => {
       {interests &&
       interests.map((interest, index) => (
         <div key={interest.id}>
-          {/* <InterestCard interest={interest} pages={pages} getAllPages={getAllPages}/> */}
           <section className='interest-box'>
             <h4>{interest.id}</h4>
-            <a href={`/interest/${interest.id}`}>{interest.topic}</a>
+            <Link to={`/interests/${interest.id}`}>{interest.topic}</Link>
             <h4>{interest.description}</h4>
-            <ul>
+            {/* <ul>
             {pages &&
             pages.map((page, index) => (
               page.interestId === interest.id
@@ -43,7 +42,7 @@ const Interests = (user, authenticated) => {
                 </div>)
                 : null
               ))}
-            </ul>
+            </ul> */}
           </section>
         </div>
       ))}

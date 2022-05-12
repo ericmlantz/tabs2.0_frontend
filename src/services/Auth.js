@@ -13,6 +13,7 @@ export const LoginUser = async (data) => {
   try {
     const res = await Client.post('http://localhost:3001/users/login', data)
     localStorage.setItem('token', res.data.token)
+    localStorage.setItem('username', res.data.user.name)
     return res.data
   } catch (error) {
   throw error
