@@ -6,7 +6,7 @@ import InterestCard from './InterestCard'
 import styled, { keyframes } from 'styled-components'
 
 
-const CreatePageForm = () => {
+const CreateSearchForm = () => {
   // console.log(pagetwo)
   const navigate = useNavigate()
   let { id } = useParams()
@@ -65,4 +65,4 @@ const CreatePageForm = () => {
       
     )
   }
-  export default CreatePageForm
+  export default CreateSearchForm

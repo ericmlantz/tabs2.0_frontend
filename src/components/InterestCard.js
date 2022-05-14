@@ -39,7 +39,6 @@ const InterestCard = () => {
         <li>
           Search 1 link
         </li>
-        <div class="gcse-searchbox"></div>
         <li>
           Search 2 Link
         </li>

@@ -10,7 +10,6 @@ import CreatePageForm from './components/CreatePageForm';
 import { Routes, Route } from 'react-router'
 import { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
-import styled, {keyframes, createGlobalStyle} from "styled-components"
 
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -61,6 +60,7 @@ const App = () => {
         <Route path='pages' element={<Pages />} />
         
         <Route path='createpage/:id' element={<CreatePageForm />} />
+        <Route path='createsearch/:id' element={<CreateSearchForm />} />
         
         <Route path='/interests/:id' element={<InterestCard />}/>
       </Routes>
