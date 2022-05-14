@@ -1,9 +1,33 @@
 import { useState } from 'react'
 import { RegisterUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
+import Alert from 'react-bootstrap/Alert';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
 
 
 const Register = (props) => {
+
+  
+  function RegistrationCompleteAlert() {
+    const [show, setShow] = useState(false);
+  
+    if (show) {
+      return (
+        <Alert variant="success" onClose={() => setShow(false)} dismissible>
+          <Alert.Heading>
+          Registration Complete!
+          </Alert.Heading>
+          <p>
+          You can now sign in to get started!
+          </p>
+        </Alert>
+      );
+    }
+    return (
+      <div></div>
+    );
+  }
 
   const [formValues, setFormValues] = useState({
     name: '',
@@ -27,17 +51,11 @@ const Register = (props) => {
       email: '',
       password: '',
     })
-    alert(`Registration complete. Click 'Ok' to continue and sign in!`)
+    AlertDismissibleExample()
   } 
 
   return (
     <div>
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-      </div>
       <div className="signin-wrapper">
         <form className="login-form" onSubmit={handleSubmit}>
           <h1 className="signin-title">Sign In</h1>
@@ -76,4 +94,4 @@ const Register = (props) => {
   )
 }
 
-export default Home
+export default Register
