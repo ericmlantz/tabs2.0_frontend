@@ -20,13 +20,13 @@ const CreateSearchForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     await CreateSearch({
-      title: formValues.title,
-      url: formValues.url,
+      searchName: formValues.searchName,
+      query: formValues.query,
       interestId: id,
     })
     setFormValues({
-      title: '',
-      url: '',
+      searchName: '',
+      query: '',
     })
     navigate(`/interests/${id}`)
   }
@@ -41,7 +41,7 @@ const CreateSearchForm = () => {
               name='searchName'
               type="text"
               value={formValues.searchName}
-              placeholder="Search Name"
+              placeholder="Software Engineering Jobs"
               onChange={handleChange}
             />
           </div>
@@ -51,12 +51,13 @@ const CreateSearchForm = () => {
               name='query'
               type="text"
               value={formValues.query}
-              placeholder="Search terms/query"
+              placeholder="software engineering jobs in atlanta"
               onChange={handleChange}
             />
           </div>
           <div className="button-wrapper">
-            <button className="submit-button" type="submit">Submit</button>
+            <button className="submit-button" type="submit" disabled={!formValues.searchName || !formValues.query}>
+              Submit</button>
           </div>
         </form>
       </div>

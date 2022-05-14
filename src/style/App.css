@@ -53,6 +53,11 @@
 }
 
 /* Style the links inside the sidenav */
+#navbar {
+  position: fixed;
+  top: 0px;
+  left: 0px
+}
 #mySidenav .link {
   font-family: 'Michroma', sans-serif;
   position: absolute; /* Position them relative to the browser window */

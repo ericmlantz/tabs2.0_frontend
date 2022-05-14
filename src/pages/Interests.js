@@ -1,6 +1,7 @@
 import { useState, useEffect} from 'react'
 import { GetAllInterests } from '../services/InterestServices'
 import { Link } from 'react-router-dom'
+import CreateInterestForm from '../components/CreateInterestForm'
 
 
 const Interests = () => {
@@ -18,6 +19,7 @@ const Interests = () => {
   return (
     <div>
       <h1>Interests</h1>
+      <Link className="create-new-button" to={'/createinterest'}>Create New Interest</Link>
       {interests &&
       interests.map((interest, index) => (
         <div key={interest.id}>

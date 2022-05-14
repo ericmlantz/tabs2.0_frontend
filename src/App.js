@@ -7,6 +7,7 @@ import Profile from './pages/Profile'
 import NavBar from './components/NavBar'
 import CreatePageForm from './components/CreatePageForm';
 import CreateSearchForm from './components/CreateSearchForm';
+import CreateInterestForm from './components/CreateInterestForm';
 import Register from './pages/Register'
 
 import { Routes, Route } from 'react-router'
@@ -32,6 +33,8 @@ const App = () => {
   }
   
   const username = localStorage.getItem('username')
+  const theUserId = localStorage.getItem('theUserid')
+  const email = localStorage.getItem('email')
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -61,11 +64,11 @@ const App = () => {
 
         <Route path='interests' element={<Interests user={user} authenticated={authenticated}/>} />
         
-        <Route path='profile' element={<Profile username={username} />} />
+        <Route path='profile' element={<Profile username={username} email={email} theUserId={theUserId} />} />
         
         <Route path='pages' element={<Pages />} />
         
-        <Route path='createinterest' element={<CreateInterestForm theUserId={theUserId}  />} />
+        <Route path='createinterest' element={<CreateInterestForm theUserId={theUserId} />} />
         <Route path='createpage/:id' element={<CreatePageForm />} />
         <Route path='createsearch/:id' element={<CreateSearchForm />} />
         

@@ -1,18 +1,17 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { CreateInterest } from '../services/InterestServices'
-import InterestCard from './InterestCard'
 
 
-const CreateInterestForm = (user) => {
+const CreateInterestForm = ({theUserId}) => {
   const navigate = useNavigate()
-  let { id } = useParams()
 
   const [formValues, setFormValues] = useState({
     topic: '',
     description: '',
   })
+
   const handleChange = (event) => {
     setFormValues({ ...formValues, [event.target.name]: event.target.value })
   }
@@ -22,36 +21,37 @@ const CreateInterestForm = (user) => {
     await CreateInterest({
       topic: formValues.topic,
       description: formValues.description,
-      userId: id,
+      userId: theUserId,
     })
     setFormValues({
-      title: '',
-      url: '',
+      topic: '',
+      description: '',
     })
-    navigate(`/interests/${id}`)
+    navigate('/interests')
   }
+  
     return (
       <div className="page-form-wrapper">
-        <h1 className="X-page-header">Create New Page</h1>
+        <h1 className="X-page-header">Create A New Interest</h1>
         <br/>
         <form onSubmit={handleSubmit}>
           <div>
-            <label><b>Page Title:</b></label>
+            <label><b>Interest Topic:</b></label>
             <input
-              name='title'
+              name='topic'
               type="text"
-              value={formValues.title}
-              placeholder="Page Title"
+              value={formValues.topic}
+              placeholder="Interest Topic"
               onChange={handleChange}
             />
           </div>
           <div>
-            <label><b>URL:</b></label>
+            <label><b>Description:</b></label>
             <input
-              name='url'
+              name='description'
               type="text"
-              value={formValues.url}
-              placeholder="Logo Image URL"
+              value={formValues.description}
+              placeholder="Description/Purpose of Interest"
               onChange={handleChange}
             />
           </div>
@@ -60,7 +60,7 @@ const CreateInterestForm = (user) => {
           </div>
         </form>
       </div>
-      
     )
   }
+
   export default CreateInterestForm

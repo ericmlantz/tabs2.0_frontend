@@ -14,6 +14,8 @@ export const LoginUser = async (data) => {
     const res = await Client.post('http://localhost:3001/users/login', data)
     localStorage.setItem('token', res.data.token)
     localStorage.setItem('username', res.data.user.name)
+    localStorage.setItem('theUserId', res.data.user.id)
+    localStorage.setItem('email', res.data.user.email)
     return res.data
   } catch (error) {
   throw error
