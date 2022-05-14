@@ -6,6 +6,8 @@ import Home from './pages/Home'
 import Profile from './pages/Profile'
 import NavBar from './components/NavBar'
 import CreatePageForm from './components/CreatePageForm';
+import CreateSearchForm from './components/CreateSearchForm';
+import Register from './pages/Register'
 
 import { Routes, Route } from 'react-router'
 import { useState, useEffect } from 'react'
@@ -44,15 +46,19 @@ const App = () => {
   return (
     <div className="App">
       <h1>Tabs 2.0</h1>
+
       <NavBar
         authenticated={authenticated}
         user={user}
         handleLogOut={handleLogOut}
       />
+
       <Routes>
         
         <Route path='/' element={<Home setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>}/>
         
+        <Route path='/register' element={<Register setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>}/>
+
         <Route path='interests' element={<Interests user={user} authenticated={authenticated}/>} />
         
         <Route path='profile' element={<Profile username={username} />} />

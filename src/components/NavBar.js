@@ -3,28 +3,9 @@ import styled, { keyframes, createGlobalStyle } from 'styled-components';
 
 const NavBar = ({ authenticated, user, handleLogOut }) => {
   let authenticatedOptions
-
-  const GlobalStyle = createGlobalStyle`
-  .link {
-    font-size: 8px;
-  }
-`;
-
-const StyledNav = styled.nav`
-    /* Your styles here */
-`;
-
-function Nav({children}) {
-  return (
-    <StyledNav>
-      <GlobalStyle />
-      {children}
-    </StyledNav>
-  );
-}
   if (user) {
     authenticatedOptions = (
-      <Nav id="navbar">
+      <nav id="navbar">
         <div id="mySidenav" className="sidenav">
         <NavLink id="about" className="link" to={`/profile`}>
           Profile
@@ -36,10 +17,7 @@ function Nav({children}) {
           Sign Out
         </NavLink>
       </div>
-        
-        
-        
-      </Nav>
+      </nav>
     )
   }
 
