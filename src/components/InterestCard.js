@@ -1,66 +1,64 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { GetInterestByPk } from "../services/InterestServices"
-import PageCards from './PageCards'
+import { Link } from "react-router-dom"
+import { GetAllPages } from '../services/PageServices'
+import PageCards from "./PageCards"
 
-const InterestCard = ({interest, pages, getAllPages}) => {
-
+const InterestCard = () => {
+  
   const navigate = useNavigate()
 
-  const [interestCard, setInterestCard] = useState([])
+  const [interestcard, setInterestCard] = useState([])
+  const [pages, setPages] = useState([])
 
   let { id } = useParams()
   
   const getInterestCard = async (id) => {
     const res = await GetInterestByPk(id)
     setInterestCard(res)
-    console.log(interestCard)
+  }
+
+  const getAllPages = async () => {
+    const res = await GetAllPages();
+    setPages(res)
   }
 
   useEffect(() => {
     getInterestCard(id)
+    getAllPages()
+    //NEED TO TRY AND GET TO REFRESH TO SHOW NEW PAGES AS WELL
   }, [id])
 
-  const HandleCreatePage = () => {
-    navigate('/createpage');
-  }
   return (
     <div>
-      <h1>{interestCard.topic}</h1>
+      <h1>{interestcard.topic}</h1>
       <section className='searches-list'>
-        <h3>Searches List</h3>
+        <h3>My Searches</h3>
         <button>Make New Search</button>
         <li>
-          Search 1 Link
+          Search 1 link
         </li>
+        <div class="gcse-searchbox"></div>
         <li>
           Search 2 Link
         </li>
       </section>
       <section className='pages-view'>
       <h3>Pages</h3>
-        <button onClick={HandleCreatePage}>Create new Page</button>
-        {/* <div>     
-        {pages.map((page, index) => (
-          <PageCards interest={interest} pages={pages} getAllPages={getAllPages}/>
-        ))}
-          <p>URL Displayed</p>
-          <img src='https://websavers.ca/wp-content/uploads/2014/02/preview-website-plesk-wordpress-websavers.jpg' alt='website preview' />
-          <section className='Notes'>
-            <h5>Note Title</h5>
-            <p>Note Body</p>
-          </section>
-        </div> */}
-        {/* <div>
-          <h4>Page 1</h4>
-          <p>URL Displayed</p>
-          <img src='https://websavers.ca/wp-content/uploads/2014/02/preview-website-plesk-wordpress-websavers.jpg' alt='website preview' />
-          <section className='Notes'>
-            <h5>Note Title</h5>
-            <p>Note Body</p>
-          </section>
-        </div> */}
-      </section>
+        <Link className="create-new-button" to={`/createpage/${id}`}>Create New Page</Link>
+        </section>
+            <ul>
+          {pages &&
+            pages.map((page, index) => (
+              page.interestId === interestcard.id
+               ? 
+               <div key={page.id}>
+               <PageCards interestcard={interestcard} page={page}/>
+               </div>
+                : null
+              ))}
+            </ul>
     </div>
   )
 }

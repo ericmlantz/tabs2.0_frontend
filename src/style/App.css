@@ -1,12 +1,107 @@
 .App {
   text-align: center;
 }
+* {
+  margin: 5px;
+  padding: 0;
+}
 
 .nav-link {
   margin: 0 5px;
 }
 
-
 .interest-box {
   border: black solid 1px;
+}
+
+.create-new-button {
+  background: #b0f566;
+  border: 2px solid #b0f566;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #808080;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  margin: 10px;
+}
+
+.create-new-button:hover,
+.create-new-button:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #323232;
+}
+
+.create-new-button:active {
+  opacity: .5;
+}
+
+/* Style the links inside the sidenav */
+#mySidenav a {
+  position: absolute; /* Position them relative to the browser window */
+  left: -80px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 15px; /* 15px padding */
+  width: 100px; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Increase font size */
+  color: white; /* White text color */
+  border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+}
+
+#mySidenav a:hover {
+  left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#about {
+  top: 20px;
+  background-color: #808080;
+}
+
+#blog {
+  top: 80px;
+  background-color: #99ee3e; /* Blue */
+}
+
+#projects {
+  top: 140px;
+  background-color: #323232; /* Red */
+}
+
+#contact {
+  top: 200px;
+  background-color: #555 /* Light Black */
+}
+
+
+/* DRAGGABLE */
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.box {
+  border: 3px solid #666;
+  background-color: #ddd;
+  border-radius: .5em;
+  padding: 10px;
+  cursor: move;
 }

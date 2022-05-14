@@ -1,26 +1,50 @@
 import { NavLink } from 'react-router-dom'
+import styled, { keyframes, createGlobalStyle } from 'styled-components';
 
 const NavBar = ({ authenticated, user, handleLogOut }) => {
   let authenticatedOptions
+
+  const GlobalStyle = createGlobalStyle`
+  .link {
+    font-size: 8px;
+  }
+`;
+
+const StyledNav = styled.nav`
+    /* Your styles here */
+`;
+
+function Nav({children}) {
+  return (
+    <StyledNav>
+      <GlobalStyle />
+      {children}
+    </StyledNav>
+  );
+}
   if (user) {
     authenticatedOptions = (
-      <nav className="navBar">
-        <NavLink className="nav-link" to={`/profile`}>
+      <Nav id="navbar">
+        <div id="mySidenav" className="sidenav">
+        <NavLink id="about" className="link" to={`/profile`}>
           Profile
         </NavLink>
-        <NavLink className="nav-link" to={`/interests`}>
+        <NavLink id="blog" className="link" to={`/interests`}>
           Interests
         </NavLink>
-        <NavLink className="signout nav-link" onClick={handleLogOut} to="/">
+        <NavLink className="signout link" id="projects" onClick={handleLogOut} to="/">
           Sign Out
         </NavLink>
-
-      </nav>
+      </div>
+        
+        
+        
+      </Nav>
     )
   }
 
   const publicOptions = (
-    <nav className="navBar">
+    <nav id="navbar">
     </nav>
   )
 

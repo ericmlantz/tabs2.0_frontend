@@ -1,26 +1,18 @@
 import { useState, useEffect} from 'react'
 import { GetAllInterests } from '../services/InterestServices'
-import InterestCard from '../components/InterestCard'
-import { GetAllPages } from '../services/PageServices'
 import { Link } from 'react-router-dom'
 
 
-const Interests = (user, authenticated) => {
+const Interests = () => {
   let [interests, setInterests] = useState([])
-  let [pages, setPages] = useState([])
 
   const getAllInterests = async () => {
     const res = await GetAllInterests();
     setInterests(res)
   }
-  const getAllPages = async () => {
-    const res = await GetAllPages();
-    setPages(res)
-  }
 
   useEffect(() => {
     getAllInterests()
-    getAllPages()
   }, [])
 
   return (

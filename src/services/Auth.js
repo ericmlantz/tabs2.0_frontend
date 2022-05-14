@@ -22,7 +22,7 @@ export const LoginUser = async (data) => {
 
 export const CheckSession = async () => {
   try {
-    // Checks if the current token if it exists is valid
+    // Checks if the current token, if it exists, is valid
     const res = await Client.get('http://localhost:3001/users/session')
     return res.data
   } catch (error) {

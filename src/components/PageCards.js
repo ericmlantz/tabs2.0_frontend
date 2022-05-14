@@ -1,11 +1,15 @@
+import InterestCard from "./InterestCard"
+import { GetScreenshot } from "../services/PageServices"
+import { useState } from "react"
+import styled, {keyframes, createGlobalStyle} from "styled-components"
 
 
-const PageCards = ({pages}) => {
+const PageCards = ({page}) => {
 
+ 
   return (
-    <div>
-      <h2>{pages.title}</h2>
-      <h3>{pages.url}</h3>
+    <div class='container'>
+      <div draggable='true' class="box">{page.title}</div>
     </div>
   )
 }
