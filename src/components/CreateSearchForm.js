@@ -1,19 +1,17 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { CreatePage } from '../services/PageServices'
+import { CreateSearch } from '../services/SearchServices'
 import InterestCard from './InterestCard'
-import styled, { keyframes } from 'styled-components'
 
 
 const CreateSearchForm = () => {
-  // console.log(pagetwo)
   const navigate = useNavigate()
   let { id } = useParams()
 
   const [formValues, setFormValues] = useState({
-    title: '',
-    url: '',
+    searchName: '',
+    query: '',
   })
   const handleChange = (event) => {
     setFormValues({ ...formValues, [event.target.name]: event.target.value })
@@ -21,7 +19,7 @@ const CreateSearchForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    await CreatePage({
+    await CreateSearch({
       title: formValues.title,
       url: formValues.url,
       interestId: id,
@@ -30,30 +28,30 @@ const CreateSearchForm = () => {
       title: '',
       url: '',
     })
-    navigate('/interests')
+    navigate(`/interests/${id}`)
   }
     return (
-      <div className="page-form-wrapper">
-        <h1 className="X-page-header">Create New Page</h1>
+      <div>
+        <h1>Create New Search</h1>
         <br/>
         <form onSubmit={handleSubmit}>
           <div>
-            <label><b>Page Title:</b></label>
+            <label><b>Search Identifier/Name:</b></label>
             <input
-              name='title'
+              name='searchName'
               type="text"
-              value={formValues.title}
-              placeholder="Page Title"
+              value={formValues.searchName}
+              placeholder="Search Name"
               onChange={handleChange}
             />
           </div>
           <div>
-            <label><b>URL:</b></label>
+            <label><b>Search Query:</b></label>
             <input
-              name='url'
+              name='query'
               type="text"
-              value={formValues.url}
-              placeholder="Logo Image URL"
+              value={formValues.query}
+              placeholder="Search terms/query"
               onChange={handleChange}
             />
           </div>

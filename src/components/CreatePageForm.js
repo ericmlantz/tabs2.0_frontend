@@ -3,11 +3,9 @@ import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { CreatePage } from '../services/PageServices'
 import InterestCard from './InterestCard'
-import styled, { keyframes } from 'styled-components'
 
 
 const CreatePageForm = () => {
-  // console.log(pagetwo)
   const navigate = useNavigate()
   let { id } = useParams()
 
@@ -30,7 +28,7 @@ const CreatePageForm = () => {
       title: '',
       url: '',
     })
-    navigate('/interests')
+    navigate(`/interests/${id}`)
   }
     return (
       <div className="page-form-wrapper">
