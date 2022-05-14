@@ -9,6 +9,7 @@ import CreatePageForm from './components/CreatePageForm';
 import CreateSearchForm from './components/CreateSearchForm';
 import CreateInterestForm from './components/CreateInterestForm';
 import Register from './pages/Register'
+import Tabs from './pages/Tabs';
 
 import { Routes, Route } from 'react-router'
 import { useState, useEffect } from 'react'
@@ -58,19 +59,21 @@ const App = () => {
 
       <Routes>
         
-        <Route path='/' element={<Home setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>}/>
+        <Route path='/' element={<Tabs setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>}/>
+
+        <Route path='/signin' element={<Home setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>}/>
         
         <Route path='/register' element={<Register setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>}/>
 
-        <Route path='interests' element={<Interests user={user} authenticated={authenticated}/>} />
+        <Route path='/interests' element={<Interests user={user} authenticated={authenticated}/>} />
         
-        <Route path='profile' element={<Profile username={username} email={email} theUserId={theUserId} />} />
+        <Route path='/profile' element={<Profile username={username} email={email} theUserId={theUserId} />} />
         
-        <Route path='pages' element={<Pages />} />
+        <Route path='/pages' element={<Pages />} />
         
-        <Route path='createinterest' element={<CreateInterestForm theUserId={theUserId} />} />
-        <Route path='createpage/:id' element={<CreatePageForm />} />
-        <Route path='createsearch/:id' element={<CreateSearchForm />} />
+        <Route path='/createinterest' element={<CreateInterestForm theUserId={theUserId} />} />
+        <Route path='/createpage/:id' element={<CreatePageForm />} />
+        <Route path='/createsearch/:id' element={<CreateSearchForm />} />
         
         <Route path='/interests/:id' element={<InterestCard />}/>
       </Routes>

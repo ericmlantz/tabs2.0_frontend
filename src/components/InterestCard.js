@@ -35,17 +35,22 @@ const InterestCard = () => {
       <h1>{interestcard.topic}</h1>
       <section className='searches-list'>
         <h3>My Searches</h3>
-        <button>Make New Search</button>
-        <li>
-          Search 1 link
-        </li>
-        <li>
-          Search 2 Link
-        </li>
+        <Link className="create-new-button" to={`/createsearch/${id}`}><span>Add A Search</span></Link>
+        <ul>
+          {searches &&
+            searches.map((search, index) => (
+              search.interestId === interestcard.id
+               ? 
+               <div key={page.id}>
+               <SearchesCards interestcard={interestcard} page={page}/>
+               </div>
+                : null
+              ))}
+            </ul>
       </section>
       <section className='pages-view'>
       <h3>Pages</h3>
-        <Link className="create-new-button" to={`/createpage/${id}`}>Create New Page</Link>
+        <Link className="create-new-button" to={`/createpage/${id}`}><span>Create New Page</span></Link>
         </section>
             <ul>
           {pages &&

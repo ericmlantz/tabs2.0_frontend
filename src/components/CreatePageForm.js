@@ -51,12 +51,12 @@ const CreatePageForm = () => {
               name='url'
               type="text"
               value={formValues.url}
-              placeholder="Logo Image URL"
+              placeholder="https://www.google.com/search?q=puppies"
               onChange={handleChange}
             />
           </div>
           <div className="button-wrapper">
-            <button className="submit-button" type="submit">Submit</button>
+            <button className="submit-button" type="submit" disabled={!formValues.title || !formValues.url}>Submit</button>
           </div>
         </form>
       </div>

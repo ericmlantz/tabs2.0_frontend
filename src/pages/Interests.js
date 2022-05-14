@@ -19,7 +19,7 @@ const Interests = () => {
   return (
     <div>
       <h1>Interests</h1>
-      <Link className="create-new-button" to={'/createinterest'}>Create New Interest</Link>
+      <Link className="create-new-button" to={'/createinterest'}><span>Create New Interest</span></Link>
       {interests &&
       interests.map((interest, index) => (
         <div key={interest.id}>

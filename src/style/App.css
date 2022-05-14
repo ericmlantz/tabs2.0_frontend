@@ -2,7 +2,7 @@
   text-align: center;
 }
 * {
-  margin: 5px;
+  margin: 20px 10px;
   padding: 0;
 }
 
@@ -15,33 +15,25 @@
 }
 
 .create-new-button {
-  background: #b0f566;
-  border: 2px solid #b0f566;
-  border-radius: 6px;
+  font-family: 'Michroma', sans-serif;
+  background: #d1e751;
+  color: black;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-  box-sizing: border-box;
-  color: #808080;
   cursor: pointer;
-  display: inline-block;
-  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
   font-size: 16px;
   font-weight: 800;
   line-height: 16px;
-  min-height: 40px;
-  outline: 0;
-  padding: 12px 14px;
   text-align: center;
-  text-rendering: geometricprecision;
-  text-transform: none;
   text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
   margin: 10px;
+  border-radius: 4px;
+  border: none;
+  padding: 15px 15px;
+  width: 200px;
+  transition: all 0.5s;
 }
 
-.create-new-button:hover,
+/* .create-new-button:hover,
 .create-new-button:active {
   background-color: initial;
   background-position: 0 0;
@@ -50,6 +42,33 @@
 
 .create-new-button:active {
   opacity: .5;
+} */
+
+.create-new-button span {
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.create-new-button span:after {
+  content: '»';
+  color:#4dbce8;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.create-new-button:hover span {
+  padding-right: 25px;
+}
+
+.create-new-button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 /* Style the links inside the sidenav */
@@ -61,7 +80,7 @@
 #mySidenav .link {
   font-family: 'Michroma', sans-serif;
   position: absolute; /* Position them relative to the browser window */
-  left: -135px; /* Position them outside of the screen */
+  left: -145px; /* Position them outside of the screen */
   transition: 0.3s; /* Add transition on hover */
   padding: 15px 10px 15px 15px; /* 15px padding */
   width: 175px; /* Set a specific width */
@@ -71,34 +90,53 @@
   border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
   text-align: right;
 }
-
-#mySidenav .link:hover {
-  left: -10px; /* On mouse-over, make the elements appear as they should */
+.tabs {
+  font-family: 'Michroma', sans-serif;
+  position: absolute; /* Position them relative to the browser window */
+  left:-30px; /* Position them outside of the screen */
+  padding: 15px 10px 15px 15px; /* 15px padding */
+  width: 120px; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Increase font size */
+  color: white; /* White text color */
+  border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+  text-align: right;
 }
+.tabs:hover {
+  color: #4dbce8;
+}
+#mySidenav .link:hover {
+  left: -20px; /* On mouse-over, make the elements appear as they should */
+}
+#tabs .link:hover {
+  left: -20px; /* On mouse-over, make the elements appear as they should */
+}
+
 
 i {
   padding: 0px 0px 0px 10px;
 }
 
+#tabs {
+  top: -30px;
+  background-color: #000000;
+}
+
 #interest {
-  top: 20px;
-  background-color: #4dbce8;
+  top: 30px;
+  background-color: #26ade4;
 }
 
 #profile {
-  top: 80px;
+  top: 90px;
   background-color: #d1e751; 
 }
 
 #signout {
-  top: 140px;
-  background-color: #242424; 
+  top: 150px;
+  background-color: #9f9f9f;
 }
 
-#contact {
-  top: 200px;
-  background-color: #555 /* Light Black */
-}
 #signout:hover {
   background-color: red; 
 }

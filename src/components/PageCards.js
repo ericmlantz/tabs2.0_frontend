@@ -8,8 +8,8 @@ const PageCards = ({page}) => {
 
  
   return (
-    <div class='container'>
-      <div draggable='true' class="box">{page.title}</div>
+    <div className='container'>
+      <div draggable='true' className="box">{page.title}</div>
     </div>
   )
 }

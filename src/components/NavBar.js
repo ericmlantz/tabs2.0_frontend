@@ -5,6 +5,9 @@ const NavBar = ({ authenticated, user, handleLogOut }) => {
   if (user) {
     authenticatedOptions = (
       <nav id="navbar">
+        <NavLink id="tabs" className='tabs' to={`/tabs`}>
+          Tabs 2.0
+        </NavLink>
         <div id="mySidenav" className="sidenav">
         <NavLink id="interest" className="link" to={`/interests`}>
           Interest <i className="bi bi-journal-bookmark-fill"></i>
@@ -22,11 +25,14 @@ const NavBar = ({ authenticated, user, handleLogOut }) => {
 
   const publicOptions = (
     <nav id="navbar">
+      <NavLink id="tabs" className='tabs' to={`/tabs`}>
+          Tabs 2.0
+        </NavLink>
         <div id="mySidenav" className="sidenav">
-        <NavLink id="profile" className="link" to={'/register'}>
+        <NavLink id="interest" className="link" to={'/register'}>
           Register  <i className="bi bi-person-plus-fill"></i>
         </NavLink>
-        <NavLink id="interest" className="link" to={'/'}>
+        <NavLink id="profile" className="link" to={'/signin'}>
           Sign In <i className="bi bi-door-open-fill"></i>
         </NavLink>
         </div>

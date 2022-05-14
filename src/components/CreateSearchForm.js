@@ -2,7 +2,6 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { CreateSearch } from '../services/SearchServices'
-import InterestCard from './InterestCard'
 
 
 const CreateSearchForm = () => {
