@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { GetInterestByPk } from "../services/InterestServices"
 import { Link } from "react-router-dom"
+
+import { GetInterestByPk } from "../services/InterestServices"
 import { GetAllPages } from '../services/PageServices'
 import PageCards from "./PageCards"
+import { GetAllSearches } from '../services/SearchServices'
+import SearchCards from './SearchCard'
+
 
 const InterestCard = () => {
   
   const navigate = useNavigate()
 
+  const [searches, setSearches] = useState([])
   const [interestcard, setInterestCard] = useState([])
   const [pages, setPages] = useState([])
 
@@ -24,9 +29,14 @@ const InterestCard = () => {
     setPages(res)
   }
 
+  const getAllSearches = async () => {
+    const res = await GetAllSearches();
+    setSearches(res)
+  }
   useEffect(() => {
     getInterestCard(id)
     getAllPages()
+    getAllSearches()
     //NEED TO TRY AND GET TO REFRESH TO SHOW NEW PAGES AS WELL
   }, [id])
 
@@ -41,8 +51,8 @@ const InterestCard = () => {
             searches.map((search, index) => (
               search.interestId === interestcard.id
                ? 
-               <div key={page.id}>
-               <SearchesCards interestcard={interestcard} page={page}/>
+               <div key={search.id}>
+               <SearchCard interestcard={interestcard} search={search}/>
                </div>
                 : null
               ))}
