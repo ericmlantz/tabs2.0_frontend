@@ -18,27 +18,26 @@ const Register = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     await RegisterUser({
-      firstName: formValues.firstname,
-      lastName: formValues.lastname,
+      name: formValues.name,
       email: formValues.email,
-      username: formValues.username,
       password: formValues.password,
-      location: formValues.location
     })
     setFormValues({
-      firstname: '',
-      lastname: '',
+      name: '',
       email: '',
-      username: '',
       password: '',
-      location: ''
     })
-    props.setShow(false)
     alert(`Registration complete. Click 'Ok' to continue and sign in!`)
   } 
 
   return (
     <div>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
       <div className="signin-wrapper">
         <form className="login-form" onSubmit={handleSubmit}>
           <h1 className="signin-title">Sign In</h1>
