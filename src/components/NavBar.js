@@ -6,14 +6,14 @@ const NavBar = ({ authenticated, user, handleLogOut }) => {
     authenticatedOptions = (
       <nav id="navbar">
         <div id="mySidenav" className="sidenav">
-        <NavLink id="about" className="link" to={`/profile`}>
-          Profile
+        <NavLink id="interest" className="link" to={`/interests`}>
+          Interest <i className="bi bi-journal-bookmark-fill"></i>
         </NavLink>
-        <NavLink id="blog" className="link" to={`/interests`}>
-          Interests
+        <NavLink id="profile" className="link" to={`/profile`}>
+          Profile <i className="bi bi-person-plus-fill"></i>
         </NavLink>
-        <NavLink className="signout link" id="projects" onClick={handleLogOut} to="/">
-          Sign Out
+        <NavLink id="signout" className="link outred" onClick={handleLogOut} to="/">
+          Sign Out <i className="bi bi-box-arrow-left"></i>
         </NavLink>
       </div>
       </nav>
@@ -23,11 +23,11 @@ const NavBar = ({ authenticated, user, handleLogOut }) => {
   const publicOptions = (
     <nav id="navbar">
         <div id="mySidenav" className="sidenav">
-        <NavLink id="about" className="link" to={'/register'}>
-          Register
+        <NavLink id="profile" className="link" to={'/register'}>
+          Register  <i className="bi bi-person-plus-fill"></i>
         </NavLink>
-        <NavLink id="blog" className="link" to={'/'}>
-          Sign In
+        <NavLink id="interest" className="link" to={'/'}>
+          Sign In <i className="bi bi-door-open-fill"></i>
         </NavLink>
         </div>
     </nav>

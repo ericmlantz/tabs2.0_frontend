@@ -65,6 +65,7 @@ const App = () => {
         
         <Route path='pages' element={<Pages />} />
         
+        <Route path='createinterest' element={<CreateInterestForm theUserId={theUserId}  />} />
         <Route path='createpage/:id' element={<CreatePageForm />} />
         <Route path='createsearch/:id' element={<CreateSearchForm />} />
         

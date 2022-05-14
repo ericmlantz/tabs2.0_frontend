@@ -1,33 +1,12 @@
 import { useState } from 'react'
 import { RegisterUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
-import Alert from 'react-bootstrap/Alert';
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
+// import AlertRegistered from '../components/AlertRegistered'
 
 
-const Register = (props) => {
+const Register = () => {
 
-  
-  function RegistrationCompleteAlert() {
-    const [show, setShow] = useState(false);
-  
-    if (show) {
-      return (
-        <Alert variant="success" onClose={() => setShow(false)} dismissible>
-          <Alert.Heading>
-          Registration Complete!
-          </Alert.Heading>
-          <p>
-          You can now sign in to get started!
-          </p>
-        </Alert>
-      );
-    }
-    return (
-      <div></div>
-    );
-  }
+  const navigate = useNavigate()
 
   const [formValues, setFormValues] = useState({
     name: '',
@@ -51,14 +30,34 @@ const Register = (props) => {
       email: '',
       password: '',
     })
-    AlertDismissibleExample()
-  } 
+    alert(`Registration complete. Click 'Ok' to continue and sign in!`)
+    navigate('/')
+    // setShow(true)
+  }
 
+  // if (!show) {
+  //   return null
+  // }
+  
   return (
     <div>
+      {/* <AlertRegistered setShow={setShow} show={show} onClose={() => setShow(false)}/> */}
       <div className="signin-wrapper">
         <form className="login-form" onSubmit={handleSubmit}>
-          <h1 className="signin-title">Sign In</h1>
+          <h1 className="signin-title">Register</h1>
+          {/* Name */}
+          <div className="form-item">
+            <input
+              className="reg-box"
+              onChange={handleChange}
+              type="text"
+              id="name"
+              name="name"
+              value={formValues.name}
+              placeholder="Your Name"
+              required
+            />
+          </div>
           {/* Email */}
           <div className="form-item">
             <input

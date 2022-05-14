@@ -1,22 +1,24 @@
-import React from 'react'
+import React from 'react';
+import {useState} from 'react'
+import Alert from 'react-bootstrap/Alert';
+import Register from '../pages/Register';
 
-const AlertRegistered = () => {
-  const [show, setShow] = useState(false);
+const AlertRegistered = (props) => {
 
-  if (show) {
+  if (props.show) {
     return (
-      <Alert variant="success" onClose={() => setShow(false)} dismissible>
-        <Alert.Heading>
-        Registration Complete!
-        </Alert.Heading>
-        <p>
-        You can now sign in to get started!
-        </p>
-      </Alert>
+      <div></div>
     );
   }
   return (
-    <div></div>
+    <Alert variant="success" onClose={() => props.setShow(false)} dismissible>
+    <Alert.Heading>
+    Registration Complete!
+    </Alert.Heading>
+    <p>
+    You can now sign in to get started!
+    </p>
+  </Alert>
   );
 }
 

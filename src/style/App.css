@@ -53,43 +53,50 @@
 }
 
 /* Style the links inside the sidenav */
-#mySidenav a {
+#mySidenav .link {
+  font-family: 'Michroma', sans-serif;
   position: absolute; /* Position them relative to the browser window */
-  left: -80px; /* Position them outside of the screen */
+  left: -135px; /* Position them outside of the screen */
   transition: 0.3s; /* Add transition on hover */
-  padding: 15px; /* 15px padding */
-  width: 100px; /* Set a specific width */
+  padding: 15px 10px 15px 15px; /* 15px padding */
+  width: 175px; /* Set a specific width */
   text-decoration: none; /* Remove underline */
-  font-size: 20px; /* Increase font size */
+  font-size: 16px; /* Increase font size */
   color: white; /* White text color */
   border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+  text-align: right;
 }
 
-#mySidenav a:hover {
-  left: 0; /* On mouse-over, make the elements appear as they should */
+#mySidenav .link:hover {
+  left: -10px; /* On mouse-over, make the elements appear as they should */
 }
 
-/* The about link: 20px from the top with a green background */
-#about {
+i {
+  padding: 0px 0px 0px 10px;
+}
+
+#interest {
   top: 20px;
-  background-color: #808080;
+  background-color: #4dbce8;
 }
 
-#blog {
+#profile {
   top: 80px;
-  background-color: #99ee3e; /* Blue */
+  background-color: #d1e751; 
 }
 
-#projects {
+#signout {
   top: 140px;
-  background-color: #323232; /* Red */
+  background-color: #242424; 
 }
 
 #contact {
   top: 200px;
   background-color: #555 /* Light Black */
 }
-
+#signout:hover {
+  background-color: red; 
+}
 
 /* DRAGGABLE */
 .container {
