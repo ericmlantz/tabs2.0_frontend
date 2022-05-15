@@ -4,8 +4,10 @@ const SearchCard = ({search}) => {
 
   return (
     <div>
-      {search.noteName}
+      <h1>{search.noteName}</h1>
+      <p>{search.noteBody}</p>
       </div>
+      
   )
 }
 
