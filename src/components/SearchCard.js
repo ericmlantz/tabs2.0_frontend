@@ -1,8 +1,11 @@
 import React from 'react'
 
-const SearchCard = () => {
+const SearchCard = ({search}) => {
+
   return (
-    <div>SearchCard</div>
+    <div>
+      {search.noteName}
+      </div>
   )
 }
 

@@ -31,7 +31,7 @@ const Register = () => {
       password: '',
     })
     alert(`Registration complete. Click 'Ok' to continue and sign in!`)
-    navigate('/')
+    navigate('/signin')
     // setShow(true)
   }
 

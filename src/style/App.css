@@ -10,10 +10,6 @@
   margin: 0 5px;
 }
 
-.interest-box {
-  border: black solid 1px;
-}
-
 .create-new-button {
   font-family: 'Michroma', sans-serif;
   background: #d1e751;
@@ -101,6 +97,7 @@
   color: white; /* White text color */
   border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
   text-align: right;
+  margin:8px;
 }
 .tabs:hover {
   color: #4dbce8;
@@ -123,17 +120,17 @@ i {
 }
 
 #interest {
-  top: 30px;
+  top: 18px;
   background-color: #26ade4;
 }
 
 #profile {
-  top: 90px;
+  top: 78px;
   background-color: #d1e751; 
 }
 
 #signout {
-  top: 150px;
+  top: 138px;
   background-color: #9f9f9f;
 }
 
@@ -154,4 +151,56 @@ i {
   border-radius: .5em;
   padding: 10px;
   cursor: move;
+}
+
+
+/* SEARCHES */
+.gcse-search {
+  width: 50%;
+  height: 10px;
+}
+
+
+/* INTEREST CARD */
+
+.interestcard-topic {
+  font-family: 'Michroma', sans-serif;
+
+  padding: 15px; /* 15px padding */
+  width: fit-content; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Increase font size */
+  color: black; /* White text color */
+  border-radius: 5px; /* Rounded corners on the top right and bottom right side */
+  text-align: center;
+  margin: 0 auto;
+  background-color: #d1e751;
+}
+
+.interest-box {
+  background-color: #4dbce8;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.interest-card-topic-header {
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.interest-card-description {
+  font-size: 16px;
+}
+
+textarea{
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
 }

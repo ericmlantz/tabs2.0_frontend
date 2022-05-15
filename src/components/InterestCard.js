@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 
@@ -6,13 +6,17 @@ import { GetInterestByPk } from "../services/InterestServices"
 import { GetAllPages } from '../services/PageServices'
 import PageCards from "./PageCards"
 import { GetAllSearches } from '../services/SearchServices'
-import SearchCards from './SearchCard'
+import SearchCard from './SearchCard'
+import GSearch from "./GSearch"
+import ClientOnly from "../hooks/ClientOnly"
 
 
 const InterestCard = () => {
   
   const navigate = useNavigate()
 
+  const dragItem = useRef();
+  const dragOverItem = useRef();
   const [searches, setSearches] = useState([])
   const [interestcard, setInterestCard] = useState([])
   const [pages, setPages] = useState([])
@@ -37,21 +41,48 @@ const InterestCard = () => {
     getInterestCard(id)
     getAllPages()
     getAllSearches()
-    //NEED TO TRY AND GET TO REFRESH TO SHOW NEW PAGES AS WELL
   }, [id])
+    
+  const dragStart = (e, position) => {
+    dragItem.current = position;
+    console.log(e.target.innerHTML);
+  };
+
+  const dragEnter = (e, position) => {
+    dragOverItem.current = position;
+    console.log(e.target.innerHTML);
+  };
+
+  const drop = (e) => {
+    const copyListItems = [...searches];
+    const dragItemContent = copyListItems[dragItem.current];
+    copyListItems.splice(dragItem.current, 1);
+    copyListItems.splice(dragOverItem.current, 0, dragItemContent);
+    dragItem.current = null;
+    dragOverItem.current = null;
+    setSearches(copyListItems);
+  };
 
   return (
     <div>
-      <h1>{interestcard.topic}</h1>
+      <h1 className='interestcard-topic-header'>{interestcard.topic}</h1>
       <section className='searches-list'>
-        <h3>My Searches</h3>
-        <Link className="create-new-button" to={`/createsearch/${id}`}><span>Add A Search</span></Link>
+        <h3>Searches</h3>
+        <Link className="create-new-button" to={`/createsearch/${id}`}><span>Add A Note</span></Link>
+        {/* <ClientOnly> 
+          <GSearch /> 
+        </ClientOnly> */}
         <ul>
           {searches &&
             searches.map((search, index) => (
               search.interestId === interestcard.id
                ? 
-               <div key={search.id}>
+               <div key={search.id} 
+               onDragStart={(e) => dragStart(e, index)} 
+               onDragEnter={(e) => dragEnter(e, index)} 
+               onDragEnd={drop}
+               onDragOver={(e) => e.preventDefault()}
+               draggable>
                <SearchCard interestcard={interestcard} search={search}/>
                </div>
                 : null

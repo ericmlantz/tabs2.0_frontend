@@ -9,8 +9,9 @@ const CreateSearchForm = () => {
   let { id } = useParams()
 
   const [formValues, setFormValues] = useState({
-    searchName: '',
-    query: '',
+    noteName: '',
+    noteBody: '',
+    noteUrl: '',
   })
   const handleChange = (event) => {
     setFormValues({ ...formValues, [event.target.name]: event.target.value })
@@ -19,13 +20,15 @@ const CreateSearchForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     await CreateSearch({
-      searchName: formValues.searchName,
-      query: formValues.query,
+      noteName: formValues.noteName,
+      noteBody: formValues.noteBody,
+      noteUrl: formValues.noteUrl,
       interestId: id,
     })
     setFormValues({
-      searchName: '',
-      query: '',
+      noteName: '',
+      noteBody: '',
+      noteUrl: '',
     })
     navigate(`/interests/${id}`)
   }
@@ -35,27 +38,36 @@ const CreateSearchForm = () => {
         <br/>
         <form onSubmit={handleSubmit}>
           <div>
-            <label><b>Search Identifier/Name:</b></label>
+            <label><b>Name:</b></label>
             <input
-              name='searchName'
+              name='noteName'
               type="text"
-              value={formValues.searchName}
-              placeholder="Software Engineering Jobs"
+              value={formValues.noteName}
+              placeholder="Name of Note"
               onChange={handleChange}
             />
           </div>
           <div>
-            <label><b>Search Query:</b></label>
-            <input
-              name='query'
+            <textarea
+              name='noteBody'
               type="text"
-              value={formValues.query}
-              placeholder="software engineering jobs in atlanta"
+              value={formValues.noteBody}
+              placeholder="Note Text"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label><b>Associated Url:</b></label>
+            <input
+              name='noteUrl'
+              type="text"
+              value={formValues.noteUrl}
+              placeholder="https://www.google.com/puppies"
               onChange={handleChange}
             />
           </div>
           <div className="button-wrapper">
-            <button className="submit-button" type="submit" disabled={!formValues.searchName || !formValues.query}>
+            <button className="submit-button" type="submit" disabled={!formValues.noteName || !formValues.noteBody}>
               Submit</button>
           </div>
         </form>

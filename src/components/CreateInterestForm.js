@@ -1,12 +1,10 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { CreateInterest } from '../services/InterestServices'
-
 
 const CreateInterestForm = ({theUserId}) => {
   const navigate = useNavigate()
-
   const [formValues, setFormValues] = useState({
     topic: '',
     description: '',
@@ -47,7 +45,7 @@ const CreateInterestForm = ({theUserId}) => {
           </div>
           <div>
             <label><b>Description:</b></label>
-            <input
+            <textarea
               name='description'
               type="text"
               value={formValues.description}

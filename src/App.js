@@ -17,7 +17,10 @@ import { CheckSession } from './services/Auth'
 
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+  })
   
   const handleLogOut = () => {
     //Reset all auth related state and clear localStorage
@@ -34,7 +37,7 @@ const App = () => {
   }
   
   const username = localStorage.getItem('username')
-  const theUserId = localStorage.getItem('theUserid')
+  const theUserId = parseInt(localStorage.getItem('theUserId'))
   const email = localStorage.getItem('email')
 
   useEffect(() => {
@@ -43,13 +46,11 @@ const App = () => {
     // Check if token exists before requesting to validate the token
     if (token) {
       checkToken()
-      // console.log(username)
     }
   }, [])
 
   return (
     <div className="App">
-      <h1>Tabs 2.0</h1>
 
       <NavBar
         authenticated={authenticated}
@@ -65,17 +66,17 @@ const App = () => {
         
         <Route path='/register' element={<Register setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>}/>
 
-        <Route path='/interests' element={<Interests user={user} authenticated={authenticated}/>} />
+        <Route path='/interests' element={<Interests theUserId={theUserId}/>} />
         
         <Route path='/profile' element={<Profile username={username} email={email} theUserId={theUserId} />} />
         
         <Route path='/pages' element={<Pages />} />
         
-        <Route path='/createinterest' element={<CreateInterestForm theUserId={theUserId} />} />
+        <Route path='/createinterest' element={<CreateInterestForm theUserId={theUserId}/>} />
         <Route path='/createpage/:id' element={<CreatePageForm />} />
         <Route path='/createsearch/:id' element={<CreateSearchForm />} />
         
-        <Route path='/interests/:id' element={<InterestCard />}/>
+        <Route path='/interests/:id' element={<InterestCard theUserId={theUserId}/>}/>
       </Routes>
     </div>
   );

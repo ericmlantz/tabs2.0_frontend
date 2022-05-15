@@ -2,11 +2,12 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { CreatePage } from '../services/PageServices'
-import InterestCard from './InterestCard'
 
 
 const CreatePageForm = () => {
+
   const navigate = useNavigate()
+
   let { id } = useParams()
 
   const [formValues, setFormValues] = useState({
