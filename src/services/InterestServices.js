@@ -18,11 +18,11 @@ export const CreateInterest = async (data) => {
     }
   }
 
-  export const GetInterestByPk = async (id) => {
-    try {
-      const res = await Client.get(`http://localhost:3001/interests/${id}`)
-      return res.data
-      } catch (error) {
-        throw error
-      }
+export const GetInterestByPk = async (id) => {
+  try {
+    const res = await Client.get(`http://localhost:3001/interests/${id}`)
+    return res.data
+    } catch (error) {
+      throw error
     }
+  }

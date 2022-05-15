@@ -57,7 +57,7 @@ const CreatePageForm = () => {
             />
           </div>
           <div className="button-wrapper">
-            <button className="submit-button" type="submit" disabled={!formValues.title || !formValues.url}>Submit</button>
+            <button className="submit-button" type="submit" disabled={!formValues.title}>Submit</button>
           </div>
         </form>
       </div>

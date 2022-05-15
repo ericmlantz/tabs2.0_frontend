@@ -17,3 +17,21 @@ export const GetAllPages = async () => {
       throw error
     }
   }
+
+export const DeletePage = async (id) => {
+  try {
+    const res = await Client.delete(`http://localhost:3001/pages/delete/${id}`)
+    return res.data
+    } catch (error) {
+      throw error
+    }
+  }
+
+export const UpdatePage = async (id) => {
+  try {
+    const res = await Client.put(`http://localhost:3001/pages/update/${id}`)
+    return res.data
+    } catch (error) {
+      throw error
+    }
+  }

@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 const Interests = ({theUserId}) => {
   let [interests, setInterests] = useState([])
-
   const getAllInterests = async () => {
     const res = await GetAllInterests();
     setInterests(res)

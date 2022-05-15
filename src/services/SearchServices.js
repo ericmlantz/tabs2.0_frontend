@@ -17,3 +17,12 @@ export const GetAllSearches = async () => {
       throw error
     }
   }
+
+export const GetSearchByPk = async (id) => {
+  try {
+    const res = await Client.get(`http://localhost:3001/searches/${id}`)
+    return res.data
+    } catch (error) {
+      throw error
+    }
+  }

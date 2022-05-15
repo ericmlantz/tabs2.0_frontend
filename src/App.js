@@ -10,12 +10,14 @@ import CreateSearchForm from './components/CreateSearchForm';
 import CreateInterestForm from './components/CreateInterestForm';
 import Register from './pages/Register'
 import Tabs from './pages/Tabs';
+import { GetAllPages } from './services/PageServices';
 
 import { Routes, Route } from 'react-router'
 import { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
 
 const App = () => {
+  const [pages, setPages] = useState([])
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState({
     name: '',
@@ -39,6 +41,12 @@ const App = () => {
   const username = localStorage.getItem('username')
   const theUserId = parseInt(localStorage.getItem('theUserId'))
   const email = localStorage.getItem('email')
+
+  const getAllPages = async () => {
+    const res = await GetAllPages();
+    setPages(res)
+  }
+
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -76,7 +84,7 @@ const App = () => {
         <Route path='/createpage/:id' element={<CreatePageForm />} />
         <Route path='/createsearch/:id' element={<CreateSearchForm />} />
         
-        <Route path='/interests/:id' element={<InterestCard theUserId={theUserId}/>}/>
+        <Route path='/interests/:id' element={<InterestCard pages={pages} theUserId={theUserId}/>}/>
       </Routes>
     </div>
   );

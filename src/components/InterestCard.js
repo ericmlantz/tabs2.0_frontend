@@ -7,21 +7,25 @@ import { GetAllPages } from '../services/PageServices'
 import PageCards from "./PageCards"
 import { GetAllSearches } from '../services/SearchServices'
 import SearchCard from './SearchCard'
+import { DeletePage } from "../services/PageServices"
 import GSearch from "./GSearch"
 import ClientOnly from "../hooks/ClientOnly"
-
 
 const InterestCard = () => {
   
   const navigate = useNavigate()
 
-  const dragItem = useRef();
-  const dragOverItem = useRef();
+  let { id } = useParams()
+
   const [searches, setSearches] = useState([])
   const [interestcard, setInterestCard] = useState([])
   const [pages, setPages] = useState([])
+  // const [updatedPages, setUpdatedPages] = useState(pages)
 
-  let { id } = useParams()
+  // const dragItem = useRef();
+  // const dragOverItem = useRef();
+  // const [pageNotes, setPageNotes] = useState([searches])
+
   
   const getInterestCard = async (id) => {
     const res = await GetInterestByPk(id)
@@ -32,58 +36,46 @@ const InterestCard = () => {
     const res = await GetAllPages();
     setPages(res)
   }
+  const handleRemove = (pk) => {
+    DeletePage(pk)
+    const newPages = pages.filter((page) => page.id !== pk);
+    setPages(newPages);
+    navigate(`/interests/${interestcard.id}`)
+  }
+
+  // const getSearchByPk = async (pk) => {
+  //   const res = await GetSearchByPk(pk)
+  //   setPageNotes(res)
+  // }
 
   const getAllSearches = async () => {
     const res = await GetAllSearches();
     setSearches(res)
   }
+
   useEffect(() => {
     getInterestCard(id)
     getAllPages()
     getAllSearches()
   }, [id])
     
-  const dragStart = (e, position) => {
-    dragItem.current = position;
-    console.log(e.target.innerHTML);
-  };
-
-  const dragEnter = (e, position) => {
-    dragOverItem.current = position;
-    console.log(e.target.innerHTML);
-  };
-
-  const drop = (e) => {
-    const copyListItems = [...searches];
-    const dragItemContent = copyListItems[dragItem.current];
-    copyListItems.splice(dragItem.current, 1);
-    copyListItems.splice(dragOverItem.current, 0, dragItemContent);
-    dragItem.current = null;
-    dragOverItem.current = null;
-    setSearches(copyListItems);
-  };
-
   return (
     <div>
       <h1 className='interestcard-topic-header'>{interestcard.topic}</h1>
       <section className='searches-list'>
         <h3>Searches</h3>
         <Link className="create-new-button" to={`/createsearch/${id}`}><span>Add A Note</span></Link>
-        {/* <ClientOnly> 
+        <ClientOnly> 
           <GSearch /> 
-        </ClientOnly> */}
+        </ClientOnly>
         <ul>
           {searches &&
             searches.map((search, index) => (
               search.interestId === interestcard.id
                ? 
-               <div key={search.id} 
-               onDragStart={(e) => dragStart(e, index)} 
-               onDragEnter={(e) => dragEnter(e, index)} 
-               onDragEnd={drop}
-               onDragOver={(e) => e.preventDefault()}
+               <div key={search.id}
                draggable>
-               <SearchCard interestcard={interestcard} search={search}/>
+               <SearchCard pages={pages} interestcard={interestcard} search={search}/>
                </div>
                 : null
               ))}
@@ -99,7 +91,7 @@ const InterestCard = () => {
               page.interestId === interestcard.id
                ? 
                <div key={page.id}>
-               <PageCards interestcard={interestcard} page={page}/>
+               <PageCards interestcard={interestcard} getInterestCard={getInterestCard} page={page} pages={pages} handleRemove={handleRemove} setPages={setPages}/>
                </div>
                 : null
               ))}
