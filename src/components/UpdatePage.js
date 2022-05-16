@@ -32,7 +32,7 @@ const UpdatePage = () => {
     navigate(`/interests/${id}`)
   }
     return (
-      <div className="page-form-wrapper">
+      <div className="interest-form">
         <h1 className="X-page-header">Create New Page</h1>
         <br/>
         <form onSubmit={handleSubmit}>
@@ -57,7 +57,7 @@ const UpdatePage = () => {
             />
           </div>
           <div className="button-wrapper">
-            <button className="submit-button" type="submit" disabled={!formValues.title}>Submit</button>
+            <button className="submit-button" type="submit" disabled={!formValues.title}>Update Page</button>
           </div>
         </form>
       </div>

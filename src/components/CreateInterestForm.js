@@ -29,12 +29,13 @@ const CreateInterestForm = ({theUserId}) => {
   }
   
     return (
-      <div className="page-form-wrapper">
+      <div className="interest-form">
         <h1 className="createpage-title">Create A New Interest</h1>
         <br/>
         <form onSubmit={handleSubmit}>
-          <div>
-            <label><b>Interest Topic:</b></label>
+          <div classname='interest-form'>
+            <label className='section-name'><b>Interest Topic:</b></label>
+            <br/>
             <input
               name='topic'
               type="text"
@@ -44,7 +45,7 @@ const CreateInterestForm = ({theUserId}) => {
             />
           </div>
           <div>
-            <label><b>Description:</b></label>
+            <label className='section-name'><b>Description:</b></label>
             <textarea
               name='description'
               type="text"

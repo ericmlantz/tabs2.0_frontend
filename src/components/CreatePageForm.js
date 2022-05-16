@@ -33,7 +33,7 @@ const CreatePageForm = () => {
     navigate(`/interests/${id}`)
   }
     return (
-      <div className="page-form-wrapper">
+      <div className="interest-form">
         <h1 className="createpage-title">Create New Page</h1>
         <br/>
         <form onSubmit={handleSubmit}>
