@@ -18,10 +18,6 @@ const Profile = ({ user, theUserId, setUser, username, email, handleLogOut}) => 
     setUser(user)
   }
 
-  useEffect(() => {
-    setUser(theUserId)
-  }, [])
-
   const enableUpdate = (e) => {
     e.preventDefault()
 

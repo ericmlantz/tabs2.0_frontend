@@ -20,12 +20,15 @@ const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState({
     name: '',
-    email: '', 
+    email: '',
   })
   
   const handleLogOut = () => {
     //Reset all auth related state and clear localStorage
-    setUser(null)
+    setUser({
+      name: '',
+      email: '',
+    })
     toggleAuthenticated(false)
     localStorage.clear()
   }
