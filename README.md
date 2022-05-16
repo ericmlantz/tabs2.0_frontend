@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Tabs 2.0 - Frontend
+### By: Eric Lantz
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Week of May 16th
+***
+[LinkedIn](https://www.linkedin.com/in/eric-lantz/) | [Github](https://github.com/ericmlantz)
+***
+### **Table of Contents**
+1. [Description](#description)
+2. [Technology](#technology)
+3. [Getting Started](#started)
+4. [Screenshots](#screenshots)
+5. [Future Updates](#updates)
+6. [Credits](#updates)
+***
 
-## Available Scripts
+### ***Description***
+<a id="description"></a>
 
-In the project directory, you can run:
+Portfolio Project 4: A web search and page tracking application. Take notes and remember search for specific projects you are doing using this app. PERN application during the final unit in my ***Software Engineering Immersive by General Assembly.***
+***
+<a id="technology"></a>
+### ***Technologies Used***
+* JavaScript
+  * React - Front End
+* HTML
+* CSS
+* 
+  * - Back End
+* Github
+* Google Programmable Search Engine
+* html2canvas
+* OAuth
 
-### `npm start`
+***
+<a id="started"></a>
+### ***Getting Started***
+Project Backend can be found [here.](https://github.com/ericmlantz/webhub-backend)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A Trello board was used to keep track of development progress and can be viewed [here.](https://trello.com/b/NJw6FmQ6/search-hub)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The project itself was deployed and can be viewed [here.](NEED TO ADD)
+***
+### ***Screenshots***
+<a id="screenshots"></a>
 
-### `npm test`
+#### **OAuth**
+![Image](https://developer.okta.com/assets-jekyll/blog/oauth/oauth-actors-cd8b4861e839037400d8521e97c5d8cf0cb029add65d1036488991c7e85dcb72.png)
+***
+<a id="updates"></a>
+### ***Future Updates***
+- [ ] Additional Feature Idea
+- [x] ~~ER Diagram and Component Hierarchy Diagram Created~~ 
+- [x] ~~Created Development Trello~~
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+***
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### ***Credits***
+<a id="credits"></a>
+* Markdown Cheatsheet: [Github](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#lists)
