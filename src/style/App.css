@@ -43,7 +43,7 @@ padding: 0;
   background: #d1e751;
   display: flex;
   color: black;
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   cursor: pointer;
   font-size: 16px;
   font-weight: 800;
@@ -110,6 +110,7 @@ padding: 0;
   color: white; /* White text color */
   border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
   text-align: right;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .tabs {
   font-family: 'Michroma', sans-serif;
@@ -179,9 +180,9 @@ i {
 .interest-box {
   background-color: #4dbce8;
   padding: 20px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   margin: 10px;
-  width: fit-content
+  width: fit-content;
+  border-radius: 5px;
 }
 .interest-card-topic {
   font-size: 40px;
@@ -215,11 +216,6 @@ textarea{
 }
 
 /* Register Page */
-body{
-    height: 100vh;
-    padding:0;
-    margin:0;
-}
 .register-wrapper {
   margin: 0px 0px;
   display: flex;
@@ -297,4 +293,9 @@ width: fit-content;
 .webpage-title {
   font-family: 'Michroma', sans-serif;
   font-size: 40px; /* Increase font size */margin: 20px 10px;
+  color:#26ade4;
+}
+
+.section-title {
+  font-family: 'Michroma', sans-serif;
 }

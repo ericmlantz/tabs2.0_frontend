@@ -50,9 +50,9 @@ const InterestCard = () => {
     
   return (
     <div>
-      <h1 className='interestcard-topic-header'>{interestcard.topic}</h1>
+      <h1 className='webpage-title'>{interestcard.topic}</h1>
       <section className='searches-list'>
-        <p className='interest-card-topic'>Searches</p>
+        <p className='section-title'>Searches</p>
         <Link className="create-new-button" to={`/createsearch/${id}`}><span>Add A Note</span></Link>
         <ClientOnly> 
           <GSearch /> 
@@ -71,7 +71,7 @@ const InterestCard = () => {
             </ul>
       </section>
       <section className='pages-view'>
-      <h3>Pages</h3>
+      <p className='section-title'>Pages</p>
         <Link className="create-new-button" to={`/createpage/${id}`}><span>Create New Page</span></Link>
         </section>
             <ul>
