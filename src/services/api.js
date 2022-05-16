@@ -1,8 +1,9 @@
 import Axios from "axios";
 
 export const BACKEND = 'https://tabs2-backend.herokuapp.com/'
+export const FRONTEND = 'http://localhost:3001/'
 
-const Client = Axios.create({ baseURL: BACKEND });
+const Client = Axios.create({ baseURL: FRONTEND });
 
 Client.interceptors.request.use(
   (config) => {

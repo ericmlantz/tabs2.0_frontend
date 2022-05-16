@@ -80,9 +80,6 @@ const App = () => {
         <Route path='/createinterest' element={<CreateInterestForm theUserId={theUserId}/>} />
         <Route path='/createpage/:id' element={<CreatePageForm />} />
         <Route path='/createsearch/:id' element={<CreateSearchForm />} />
-        
-
-        {/* <Route path='/pages/update/:id' element={<PageCard pages={pages} theUserId={theUserId}/>}/> */}
                 
         <Route path='/interests/:id' element={<InterestCard pages={pages} theUserId={theUserId}/>}/>
       </Routes>

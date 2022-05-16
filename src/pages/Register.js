@@ -41,7 +41,6 @@ const Register = () => {
   
   return (
     <div className='register'>
-      {/* <AlertRegistered setShow={setShow} show={show} onClose={() => setShow(false)}/> */}
       <div className="register-wrapper">
         <form className="register-form" onSubmit={handleSubmit}>
           <h1 className="register-title">Register</h1>
