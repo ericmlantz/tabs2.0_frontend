@@ -15,11 +15,11 @@ const Profile = ({ user, theUserId, setUser, username, email, handleLogOut}) => 
 
   const updateUser = async (id, data) => {
     await UpdateUser(id, data)
-    setUser(id)
+    setUser(user)
   }
 
   useEffect(() => {
-    setUser(id)
+    setUser(theUserId)
   }, [])
 
   const enableUpdate = (e) => {
@@ -31,6 +31,7 @@ const Profile = ({ user, theUserId, setUser, username, email, handleLogOut}) => 
       setDeleteBtn('delete-hiding')
       setFormStatus(true)
       setUpdateBtn('Enable Update')
+      navigate(`/users/${id}`)
     }
 
     if (formStatus) {
