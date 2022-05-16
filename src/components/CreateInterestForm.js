@@ -30,7 +30,7 @@ const CreateInterestForm = ({theUserId}) => {
   
     return (
       <div className="page-form-wrapper">
-        <h1 className="X-page-header">Create A New Interest</h1>
+        <h1 className="createpage-title">Create A New Interest</h1>
         <br/>
         <form onSubmit={handleSubmit}>
           <div>

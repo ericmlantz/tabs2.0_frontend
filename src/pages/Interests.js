@@ -16,6 +16,7 @@ const Interests = ({theUserId}) => {
     <div>
       <h1 className='webpage-title'>Interests</h1>
       <Link className="create-new-button" to={'/createinterest'}><span>Create New Interest</span></Link>
+      <div className='interest-box-wrapper'>
       {interests &&
       interests.map((interest) => (
         interest.userId === theUserId
@@ -28,6 +29,7 @@ const Interests = ({theUserId}) => {
         </div>
         : null
       ))}
+      </div>
     </div>
   )
 }

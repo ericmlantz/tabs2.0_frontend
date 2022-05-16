@@ -34,7 +34,7 @@ const CreateSearchForm = () => {
   }
     return (
       <div>
-        <h1>Create New Search</h1>
+        <h1 className="createpage-title" >Create New Note</h1>
         <br/>
         <form onSubmit={handleSubmit}>
           <div>

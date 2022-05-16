@@ -34,7 +34,7 @@ const CreatePageForm = () => {
   }
     return (
       <div className="page-form-wrapper">
-        <h1 className="X-page-header">Create New Page</h1>
+        <h1 className="createpage-title">Create New Page</h1>
         <br/>
         <form onSubmit={handleSubmit}>
           <div>
