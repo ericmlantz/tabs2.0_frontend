@@ -35,7 +35,6 @@ const CreateInterestForm = ({theUserId}) => {
           <div className='interest-form'>
             <label className='section-name'><b>Interest Topic:</b></label>
             <input
-            className="input-form-input"
               name='topic'
               type="text"
               value={formValues.topic}

@@ -33,12 +33,12 @@ const CreateSearchForm = () => {
     navigate(`/interests/${id}`)
   }
     return (
-      <div className="interest-form">
+      <div>
         <h1 className="createpage-title" >Create New Note</h1>
         <br/>
         <form className="register-form interest" onSubmit={handleSubmit}>
           <div>
-            <label><b>Name:</b></label>
+            <label className="section-name"><b>Name:</b></label>
             <input
             className="input-form-input"
               name='noteName'
@@ -58,8 +58,9 @@ const CreateSearchForm = () => {
             />
           </div>
           <div>
-            <label><b>Associated Url:</b></label>
+            <label className="section-name"><b>Associated Url:</b></label>
             <input
+              className="input-form-input"
               name='noteUrl'
               type="text"
               value={formValues.noteUrl}

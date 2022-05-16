@@ -11,7 +11,6 @@ const PageCards = ({page, pages, setPages, getInterestCard, interestcard, handle
       <div>
         <p>{page.notes}</p>
         <button onClick={() => handleRemove(page.id)}>Delete Page</button>
-        {/* <button onClick={() => handleUpdate()}>Update Page</button> */}
       </div>
       </div>
     </div>

@@ -36,9 +36,9 @@ const CreatePageForm = () => {
       <div className="interest-form">
         <h1 className="createpage-title">Create New Page</h1>
         <br/>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label><b>Page Title:</b></label>
+        <form className="register-form interest" onSubmit={handleSubmit}>
+          <div className='interest-form'>
+            <label className="section-name"><b>Page Title:</b></label>
             <input
               name='title'
               type="text"

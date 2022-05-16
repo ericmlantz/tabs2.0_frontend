@@ -3,16 +3,12 @@ import { GetAllPages } from '../services/PageServices'
 
 const SearchCard = ({search, page, pages, interestcard}) => {
 
-  // const handleSubmit = (id, arr) => {
-  //   e.target.value
-  // }
-
   return (
     <div className='note-card'>
-      <h1>{search.noteName}</h1>
-      <p>{search.noteBody}</p>
+      <h5 className='note-title'>{search.noteName}</h5>
+      <p className="note-body">{search.noteBody}</p>
   <form>
-  <label htmlFor="page">Page:</label>
+  {/* <label htmlFor="page">Page:</label>
   <select id="page" name="page">
   {pages &&
     pages.map((page, index) => (
@@ -22,8 +18,7 @@ const SearchCard = ({search, page, pages, interestcard}) => {
         : null
       ))}
   </select>
-  <input type="submit"/>
-  {/* // onSubmit={(e) => {handleSubmit(search,page)}}/> */}
+  <input type="submit"/> */}
 </form>
   </div>
   )

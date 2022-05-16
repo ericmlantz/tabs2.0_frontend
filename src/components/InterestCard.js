@@ -55,11 +55,10 @@ const InterestCard = () => {
       <ClientOnly> 
           <GSearch /> 
         </ClientOnly>
-      <section className='searches-list'>
+      <section>
         <p className='google-header'>Searches</p>
         <Link className="create-new-button" to={`/createsearch/${id}`}><span>Add A Note</span></Link>
-
-        <ul>
+        <ul className='search-list'>
           {searches &&
             searches.map((search, index) => (
               search.interestId === interestcard.id
