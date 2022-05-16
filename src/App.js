@@ -10,7 +10,6 @@ import CreateSearchForm from './components/CreateSearchForm';
 import CreateInterestForm from './components/CreateInterestForm';
 import Register from './pages/Register'
 import Tabs from './pages/Tabs';
-import { BACKEND } from './global';
 
 import { Routes, Route } from 'react-router'
 import { useState, useEffect } from 'react'
