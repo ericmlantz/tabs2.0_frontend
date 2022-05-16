@@ -63,8 +63,7 @@ const InterestCard = () => {
             searches.map((search, index) => (
               search.interestId === interestcard.id
                ? 
-               <div key={search.id}
-               draggable>
+               <div key={search.id}>
                <SearchCard pages={pages} interestcard={interestcard} search={search}/>
                </div>
                 : null

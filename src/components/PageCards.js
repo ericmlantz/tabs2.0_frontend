@@ -7,10 +7,11 @@ const PageCards = ({page, pages, setPages, getInterestCard, interestcard, handle
 
   return (
     <div className='page-container'>
-      <div draggable='true' className="box">{page.title}
+      <div className="note-title"><b>{page.title}</b><br/>
+      {page.url}<hr/>
       <div>
-        <p>{page.notes}</p>
-        <button onClick={() => handleRemove(page.id)}>Delete Page</button>
+
+        <button className='delete-page' onClick={() => handleRemove(page.id)}>Delete Page</button>
       </div>
       </div>
     </div>
