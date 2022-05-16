@@ -2,7 +2,6 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { CreatePage } from '../services/PageServices'
-import UpdatePage from './UpdatePage'
 
 
 const CreatePageForm = () => {

@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { CreatePage } from '../services/PageServices'
 
-
 const UpdatePage = () => {
 
   const navigate = useNavigate()

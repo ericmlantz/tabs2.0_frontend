@@ -1,8 +1,3 @@
-import { useNavigate, useParams } from "react-router-dom"
-import { useEffect } from "react"
-import { GetAllPages } from "../services/PageServices"
-import { UpdatePage } from '../services/PageServices'
-
 const PageCards = ({page, pages, setPages, getInterestCard, interestcard, handleRemove}) => {
 
   return (

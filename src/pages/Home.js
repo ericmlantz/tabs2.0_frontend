@@ -27,7 +27,6 @@ const Home = (props) => {
       <div className="login-wrapper">
         <form className="login-form" onSubmit={handleSubmit}>
           <h1 className="login-title">Sign In</h1>
-          {/* Email */}
           <div className="form-item">
             <input
               className="reg-box"
@@ -40,7 +39,6 @@ const Home = (props) => {
               required
             />
           </div>
-          {/* Password */}
           <div className="form-item">
             <input
               className="reg-box"

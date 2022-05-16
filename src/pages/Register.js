@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { RegisterUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
-// import AlertRegistered from '../components/AlertRegistered'
 
 
 const Register = () => {
@@ -32,19 +31,13 @@ const Register = () => {
     })
     alert(`Registration complete. Click 'Ok' to continue and sign in!`)
     navigate('/signin')
-    // setShow(true)
   }
 
-  // if (!show) {
-  //   return null
-  // }
-  
   return (
     <div className='register'>
       <div className="register-wrapper">
         <form className="register-form" onSubmit={handleSubmit}>
           <h1 className="register-title">Register</h1>
-          {/* Name */}
           <div className="form-item">
             <input
               className="reg-box"
@@ -57,7 +50,6 @@ const Register = () => {
               required
             />
           </div>
-          {/* Email */}
           <div className="form-item">
             <input
               className="reg-box"
@@ -70,7 +62,6 @@ const Register = () => {
               required
             />
           </div>
-          {/* Password */}
           <div className="form-item">
             <input
               className="reg-box"

@@ -1,4 +1,4 @@
-import { GetUser, UpdateUser, DeleteUser } from '../services/UserServices'
+import { UpdateUser, DeleteUser } from '../services/UserServices'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 

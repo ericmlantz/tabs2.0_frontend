@@ -13,13 +13,13 @@ padding: 0;
 .tabs-header {
   font-family: 'Michroma', sans-serif;
 
-  padding: 5px; /* 15px padding */
-  width: fit-content; /* Set a specific width */
-  text-decoration: none; /* Remove underline */
+  padding: 5px; 
+  width: fit-content;
+  text-decoration: none;
   height: 500px;
-  font-size: 16px; /* Increase font size */
-  color: white; /* White text color */
-  border-radius: 5px; /* Rounded corners on the top right and bottom right side */
+  font-size: 16px; 
+  color: white; 
+  border-radius: 5px; 
   text-align: center;
   margin: 0px auto;
   background-color: black;
@@ -58,17 +58,6 @@ padding: 0;
   margin-bottom: 20px;
 }
 
-/* .create-new-button:hover,
-.create-new-button:active {
-  background-color: initial;
-  background-position: 0 0;
-  color: #323232;
-}
-
-.create-new-button:active {
-  opacity: .5;
-} */
-
 .create-new-button span {
   color: black;
   cursor: pointer;
@@ -93,7 +82,6 @@ padding: 0;
   right: 0;
 }
 
-/* Style the links inside the sidenav */
 #navbar {
   position: fixed;
   top: 0px;
@@ -101,28 +89,28 @@ padding: 0;
 }
 #mySidenav .link {
   font-family: 'Michroma', sans-serif;
-  position: absolute; /* Position them relative to the browser window */
-  left: -145px; /* Position them outside of the screen */
-  transition: 0.3s; /* Add transition on hover */
-  padding: 15px 10px 15px 15px; /* 15px padding */
-  width: 175px; /* Set a specific width */
-  text-decoration: none; /* Remove underline */
-  font-size: 16px; /* Increase font size */
-  color: white; /* White text color */
-  border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+  position: absolute; 
+  left: -145px; 
+  transition: 0.3s; 
+  padding: 15px 10px 15px 15px; 
+  width: 175px; 
+  text-decoration: none; 
+  font-size: 16px; 
+  color: white; 
+  border-radius: 0 5px 5px 0;
   text-align: right;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .tabs {
   font-family: 'Michroma', sans-serif;
-  position: absolute; /* Position them relative to the browser window */
-  left:-20px; /* Position them outside of the screen */
-  padding: 15px 15px 15px 15px; /* 15px padding */
-  width: 120px; /* Set a specific width */
-  text-decoration: none; /* Remove underline */
-  font-size: 16px; /* Increase font size */
-  color: white; /* White text color */
-  border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+  position: absolute; 
+  left:-20px; 
+  padding: 15px 15px 15px 15px; 
+  width: 120px; 
+  text-decoration: none; 
+  font-size: 16px; 
+  color: white; 
+  border-radius: 0 5px 5px 0; 
   text-align: right;
   margin:8px;
 }
@@ -130,7 +118,7 @@ padding: 0;
   color: #4dbce8;
 }
 #mySidenav .link:hover {
-  left: -20px; /* On mouse-over, make the elements appear as they should */
+  left: -20px; 
 }
 
 i {
@@ -161,18 +149,15 @@ i {
   background-color: red; 
 }
 
-
-/* INTEREST CARD */
-
 .interestcard-topic {
   font-family: 'Michroma', sans-serif;
 
-  padding: 15px; /* 15px padding */
-  width: fit-content; /* Set a specific width */
-  text-decoration: none; /* Remove underline */
-  font-size: 20px; /* Increase font size */
-  color: black; /* White text color */
-  border-radius: 5px; /* Rounded corners on the top right and bottom right side */
+  padding: 15px; 
+  width: fit-content; 
+  text-decoration: none; 
+  font-size: 20px; 
+  color: black; 
+  border-radius: 5px; 
   text-align: center;
   margin: 0 auto;
   background-color: #d1e751;
@@ -242,7 +227,6 @@ i {
   resize: none;
 }
 
-/* Register Page */
 .register-wrapper {
   margin: auto auto;
   display: flex;
@@ -266,12 +250,12 @@ i {
 .register-title {
   font-family: 'Michroma', sans-serif;
 
-  padding: 15px; /* 15px padding */
-  width: fit-content; /* Set a specific width */
-  text-decoration: none; /* Remove underline */
-  font-size: 20px; /* Increase font size */
-  color: black; /* White text color */
-  border-radius: 5px; /* Rounded corners on the top right and bottom right side */
+  padding: 15px; 
+  width: fit-content; 
+  text-decoration: none; 
+  font-size: 20px; 
+  color: black; 
+  border-radius: 5px; 
   text-align: center;
   margin: 0 auto;
   background-color: #26ade4;
@@ -294,7 +278,6 @@ i {
   margin-top: 10px;
 }
 
-/* Register Page */
 .register-wrapper {
   margin: auto auto;
   display: flex;
@@ -318,12 +301,12 @@ i {
 .login-title {
   font-family: 'Michroma', sans-serif;
 
-  padding: 15px; /* 15px padding */
-  width: fit-content; /* Set a specific width */
-  text-decoration: none; /* Remove underline */
-  font-size: 20px; /* Increase font size */
-  color: black; /* White text color */
-  border-radius: 5px; /* Rounded corners on the top right and bottom right side */
+  padding: 15px; 
+  width: fit-content; 
+  text-decoration: none; 
+  font-size: 20px; 
+  color: black; 
+  border-radius: 5px; 
   text-align: center;
   margin: 0 auto;
   background-color: #d1e751;
@@ -345,8 +328,6 @@ i {
   width: fit-content;
   margin-top: 10px;
 }
-
-/* Misc */
 .note-card {
     background-color: #28ace4;
     padding: 20px;
@@ -371,13 +352,13 @@ i {
 
 .webpage-title {
   font-family: 'Michroma', sans-serif;
-  font-size: 40px; /* Increase font size */margin: 20px 10px;
+  font-size: 40px; margin: 20px 10px;
   color:#28ace4;
 }
 
 .createpage-title {
   font-family: 'Michroma', sans-serif;
-  font-size: 30px; /* Increase font size */margin: 20px 10px;
+  font-size: 30px; margin: 20px 10px;
   color:#28ace4
 }
 
@@ -390,8 +371,6 @@ i {
   margin: 20px auto 10px auto;
   font-size: 16px;
 }
-
-/* Profile Page */
 
 .delete-wrapper {
   display: flex;

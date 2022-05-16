@@ -1,5 +1,4 @@
 import React from 'react'
-import { GetAllPages } from '../services/PageServices'
 
 const SearchCard = ({search, page, pages, interestcard}) => {
 
