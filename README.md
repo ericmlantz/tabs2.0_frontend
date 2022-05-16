@@ -1,7 +1,7 @@
-# Tabs 2.0 - Frontend
+# Tabs 2.0
 ### By: Eric Lantz
 
-Week of May 16th
+Week of May 16th, 2022
 ***
 [LinkedIn](https://www.linkedin.com/in/eric-lantz/) | [Github](https://github.com/ericmlantz)
 ***
@@ -17,35 +17,34 @@ Week of May 16th
 ### ***Description***
 <a id="description"></a>
 
-Portfolio Project 4: A web search and page tracking application. Take notes and remember search for specific projects you are doing using this app. PERN application during the final unit in my ***Software Engineering Immersive by General Assembly.***
+Portfolio Project 4: A web search and page tracking application. Take notes and remember search for specific projects you are doing using this app. DJANGO and REACT application during the final unit in my ***Software Engineering Immersive by General Assembly.***
 ***
 <a id="technology"></a>
 ### ***Technologies Used***
 * JavaScript
   * React - Front End
+* Node - Back End
+  * Express
+  * PostgreSQL
 * HTML
 * CSS
-* 
-  * - Back End
 * Github
-* Google Programmable Search Engine
-* html2canvas
-* OAuth
+* Google Custom Programming Search
 
 ***
 <a id="started"></a>
 ### ***Getting Started***
-Project Backend can be found [here.](https://github.com/ericmlantz/webhub-backend)
+A Trello board was used to keep track of development progress and can be viewed [here.](https://trello.com/b/NJw6FmQ6/tabs-20)
 
-A Trello board was used to keep track of development progress and can be viewed [here.](https://trello.com/b/NJw6FmQ6/search-hub)
+The project itself was deployed and can be viewed [here.](https://tabs2-frontend.herokuapp.com/)
 
-The project itself was deployed and can be viewed [here.](NEED TO ADD)
+Link to Backend [here.](https://github.com/ericmlantz/tabs2.0_backend)
 ***
 ### ***Screenshots***
 <a id="screenshots"></a>
 
-#### **OAuth**
-![Image](https://developer.okta.com/assets-jekyll/blog/oauth/oauth-actors-cd8b4861e839037400d8521e97c5d8cf0cb029add65d1036488991c7e85dcb72.png)
+#### **Custom Google Search Bar**
+![Image](https://i.imgur.com/1gaJHRK.png)
 ***
 <a id="updates"></a>
 ### ***Future Updates***
