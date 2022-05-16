@@ -1,0 +1,1 @@
+export const BACKEND = 'https://tabs2-backend.herokuapp.com/'

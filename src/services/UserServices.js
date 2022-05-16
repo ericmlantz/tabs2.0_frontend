@@ -1,8 +1,9 @@
 import Client from './api'
+import { BACKEND } from '../global'
 
 export const GetAllUsers = async () => {
   try {
-    const res = await Client.get(`http://localhost:3001/users/all`)
+    const res = await Client.get(`${BACKEND}/users/all`)
     return res.data
     } catch (error) {
       throw error
@@ -12,7 +13,7 @@ export const GetAllUsers = async () => {
 
 export const GetUser = async (pk) => {
 try {
-  const res = await Client.get(`http://localhost:3001/users/${pk}`)
+  const res = await Client.get(`${BACKEND}/users/${pk}`)
   return res.data
   } catch (error) {
     throw error
@@ -20,12 +21,12 @@ try {
 }
 
 export const DeleteUser = async (id) => {
-  const res = await Client.delete(`users/delete/${id}`)
+  const res = await Client.delete(`${BACKEND}users/delete/${id}`)
 }
 
 export const UpdateUser = async (pk, data) => {
   try {
-    const res = await Client.put(`/users/update/${pk}`, data)
+    const res = await Client.put(`${BACKEND}/users/update/${pk}`, data)
   } catch (error) {
     throw error
   }

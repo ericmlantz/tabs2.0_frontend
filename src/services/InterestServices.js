@@ -1,4 +1,5 @@
 import Client from './api'
+import { BACKEND } from '../global'
 
 export const GetAllInterests = async () => {
   try {
