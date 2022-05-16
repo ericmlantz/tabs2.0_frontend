@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 
-const Profile = ({ user, setTheUserId, username, setUser, setUsername, setEmail, handleLogOut}) => {
+const Profile = ({ user, theUserId, username, setUser, email, handleLogOut}) => {
   const [formStatus, setFormStatus] = useState(true)
   const [updateBtn, setUpdateBtn] = useState('Enable Update')
   const [updateClass, setUpdateClass] = useState('profile-input')
@@ -15,21 +15,16 @@ const Profile = ({ user, setTheUserId, username, setUser, setUsername, setEmail,
 
   const updateUser = async (id, data) => {
     await UpdateUser(id, data)
-    setUser(user)
   }
 
   const enableUpdate = (e) => {
     e.preventDefault()
     if (updateBtn === 'Update') {
-      updateUser(id, username)
-      console.log(user)
+      updateUser(id, user)
       setUpdateClass('profile-input')
       setDeleteBtn('delete-hiding')
       setFormStatus(true)
       setUpdateBtn('Enable Update')
-      const myuser = localStorage.setItem('username',user.name)
-      console.log('myuser:',myuser)
-      navigate(`/users/${id}`)
     }
 
     if (formStatus) {
@@ -44,15 +39,14 @@ const Profile = ({ user, setTheUserId, username, setUser, setUsername, setEmail,
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name] : e.target.value })
-    setUsername(user.name)
   }
   useEffect(() => {
     setUser(user)
   }, [])
 
 
-  const handleDelete = (e) => {
-    DeleteUser(user.id)
+  const handleDelete = async (e) => {
+    await DeleteUser(id)
     handleLogOut()
     navigate('/register')
     }
@@ -71,6 +65,7 @@ const Profile = ({ user, setTheUserId, username, setUser, setUsername, setEmail,
           <input
             className={updateClass}
             onChange={handleChange}
+            id="name"
             type="text"
             name="name"
             value={user.name}

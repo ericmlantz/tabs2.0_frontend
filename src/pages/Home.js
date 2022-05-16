@@ -24,9 +24,9 @@ const Home = (props) => {
 
   return (
     <div>
-      <div className="signin-wrapper">
+      <div className="login-wrapper">
         <form className="login-form" onSubmit={handleSubmit}>
-          <h1 className="signin-title">Sign In</h1>
+          <h1 className="login-title">Sign In</h1>
           {/* Email */}
           <div className="form-item">
             <input
