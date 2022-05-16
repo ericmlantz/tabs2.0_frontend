@@ -19,7 +19,6 @@ const App = () => {
   const [pages, setPages] = useState([])
   const [username, setUsername] = useState(localStorage.getItem('username'))
   const [email, setEmail] = useState(localStorage.getItem('email'))
-  const [theUserId, setTheUserId] = useState(localStorage.getItem('theUserId'))
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState({
     name: '',
@@ -44,7 +43,7 @@ const App = () => {
   }
   
   // const username = localStorage.getItem('username')
-  // const theUserId = parseInt(localStorage.getItem('theUserId'))
+  const theUserId = parseInt(localStorage.getItem('theUserId'))
   // const email = localStorage.getItem('email')
 
   useEffect(() => {
@@ -76,7 +75,7 @@ const App = () => {
 
         <Route path='/interests' element={<Interests theUserId={theUserId}/>} />
         
-        <Route path='/users/:id' element={<Profile user={user} setUsername={setUsername} setEmail={setEmail} setTheUserId={setTheUserId} setUser={setUser} handleLogOut={handleLogOut} username={username}/>} />
+        <Route path='/users/:id' element={<Profile user={user} setUsername={setUsername} setEmail={setEmail} setUser={setUser} handleLogOut={handleLogOut} username={username}/>} />
         
         <Route path='/pages' element={<Pages />} />
         
