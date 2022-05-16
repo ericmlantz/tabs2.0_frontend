@@ -10,7 +10,6 @@ import CreateSearchForm from './components/CreateSearchForm';
 import CreateInterestForm from './components/CreateInterestForm';
 import Register from './pages/Register'
 import Tabs from './pages/Tabs';
-import { GetAllUsers } from './services/UserServices';
 
 import { Routes, Route } from 'react-router'
 import { useState, useEffect } from 'react'
@@ -19,10 +18,12 @@ import { CheckSession } from './services/Auth'
 const App = () => {
   const [pages, setPages] = useState([])
   const [authenticated, toggleAuthenticated] = useState(false)
-  const [usersList, setUsersList] = useState([])
   const [user, setUser] = useState({
+    id: 1,
     name: '',
     email: '',
+    passwordDigest: '',
+    
   })
   
   const handleLogOut = () => {
@@ -43,11 +44,6 @@ const App = () => {
   const theUserId = parseInt(localStorage.getItem('theUserId'))
   const email = localStorage.getItem('email')
 
-  const getAllUsers = async () => {
-    const res = await GetAllUsers();
-    setUsersList(res)
-  }
-
   useEffect(() => {
     const token = localStorage.getItem('token')
     
@@ -64,6 +60,7 @@ const App = () => {
         authenticated={authenticated}
         user={user}
         handleLogOut={handleLogOut}
+        theUserId={theUserId}
       />
 
       <Routes>
@@ -76,7 +73,7 @@ const App = () => {
 
         <Route path='/interests' element={<Interests theUserId={theUserId}/>} />
         
-        <Route path='/profile' element={<Profile username={username} email={email} theUserId={theUserId} getAllUsers={getAllUsers} setUsersList={setUsersList} setUser={setUser} handleLogOut={handleLogOut}/>} />
+        <Route path='/users/:id' element={<Profile user={user} username={username} email={email} theUserId={theUserId} setUser={setUser} handleLogOut={handleLogOut}/>} />
         
         <Route path='/pages' element={<Pages />} />
         

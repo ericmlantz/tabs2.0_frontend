@@ -19,7 +19,7 @@ const Home = (props) => {
     setFormValues({ email: '', password: '' })
     props.setUser(payload)
     props.toggleAuthenticated(true)
-    navigate('/profile')
+    navigate('/interests')
   }
 
   return (

@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 
-const NavBar = ({ authenticated, user, handleLogOut }) => {
+const NavBar = ({ authenticated, user, handleLogOut, theUserId }) => {
   let authenticatedOptions
   if (user) {
     authenticatedOptions = (
@@ -12,7 +12,7 @@ const NavBar = ({ authenticated, user, handleLogOut }) => {
         <NavLink id="interest" className="link" to={`/interests`}>
           Interest <i className="bi bi-journal-bookmark-fill"></i>
         </NavLink>
-        <NavLink id="profile" className="link" to={`/profile`}>
+        <NavLink id="profile" className="link" to={`/users/${theUserId}`}>
           Profile <i className="bi bi-person-plus-fill"></i>
         </NavLink>
         <NavLink id="signout" className="link outred" onClick={handleLogOut} to="/">

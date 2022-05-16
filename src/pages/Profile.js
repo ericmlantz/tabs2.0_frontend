@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 
-const Profile = ({ user, users, getAllUsers, usersList, setUsersList, theUserId, setUser, username, email, handleLogOut}) => {
+const Profile = ({ user, theUserId, setUser, username, email, handleLogOut}) => {
   const [formStatus, setFormStatus] = useState(true)
   const [updateBtn, setUpdateBtn] = useState('Enable Update')
   const [updateClass, setUpdateClass] = useState('profile-input')
@@ -11,21 +11,22 @@ const Profile = ({ user, users, getAllUsers, usersList, setUsersList, theUserId,
 
   const navigate = useNavigate()
   
+  const {id} = useParams()
 
-  const updateUser = async (theUserId, data) => {
-    await UpdateUser(theUserId, data)
-    setUser(theUserId)
+  const updateUser = async (id, data) => {
+    await UpdateUser(id, data)
+    setUser(id)
   }
 
   useEffect(() => {
-    setUser(theUserId)
+    setUser(id)
   }, [])
 
   const enableUpdate = (e) => {
     e.preventDefault()
 
     if (updateBtn === 'Update') {
-      updateUser(theUserId, user)
+      updateUser(id, user)
       setUpdateClass('profile-input')
       setDeleteBtn('delete-hiding')
       setFormStatus(true)
@@ -47,17 +48,16 @@ const Profile = ({ user, users, getAllUsers, usersList, setUsersList, theUserId,
   }
 
   const handleDelete = (e) => {
-    DeleteUser(theUserId)
+    DeleteUser(user.id)
     handleLogOut()
-    navigate('/')
+    navigate('/register')
     }
-    console.log(user)
   return (
     <div className='delete-wrapper'>
     <div className="profile-page">
       <div className="initial-box">
         <p className="welcome-name">
-          Welcome {username}
+          Welcome
         </p>
       </div>
       <form className="profile-form">
@@ -85,7 +85,7 @@ const Profile = ({ user, users, getAllUsers, usersList, setUsersList, theUserId,
             id="email"
             name="email"
             value={user.email}
-            readOnly={formStatus}
+            readOnly
           />
         </label>
         <button className="profile-button" onClick={enableUpdate}>
