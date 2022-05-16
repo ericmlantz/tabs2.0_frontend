@@ -81,7 +81,6 @@ const InterestCard = () => {
                ? 
                <div key={page.id}>
                <PageCards interestcard={interestcard} getInterestCard={getInterestCard} page={page} pages={pages} handleRemove={handleRemove} setPages={setPages}/>
-               {/* <button onClick={() => {handleUpdate}}>Update Page</button> */}
                </div>
                 : null
               ))}

@@ -32,7 +32,7 @@ const CreateInterestForm = ({theUserId}) => {
       <div className="interest-form">
         <h1 className="createpage-title">Create A New Interest</h1>
         <br/>
-        <form onSubmit={handleSubmit}>
+        <form className='register-form'onSubmit={handleSubmit}>
           <div classname='interest-form'>
             <label className='section-name'><b>Interest Topic:</b></label>
             <br/>
