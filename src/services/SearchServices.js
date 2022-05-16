@@ -1,9 +1,8 @@
 import Client from "./api"
-import { BACKEND } from "../global"
 
 export const CreateSearch = async (data) => {
   try {
-    const res = await Client.post(`${BACKEND}/searches/create`, data)
+    const res = await Client.post(`/searches/create`, data)
     return res.data
     } catch (error) {
       throw error
@@ -12,7 +11,7 @@ export const CreateSearch = async (data) => {
 
 export const GetAllSearches = async () => {
   try {
-    const res = await Client.get(`${BACKEND}/searches/all`)
+    const res = await Client.get(`/searches/all`)
     return res.data
     } catch (error) {
       throw error
@@ -21,7 +20,7 @@ export const GetAllSearches = async () => {
 
 export const GetSearchByPk = async (id) => {
   try {
-    const res = await Client.get(`${BACKEND}/searches/${id}`)
+    const res = await Client.get(`/searches/${id}`)
     return res.data
     } catch (error) {
       throw error
