@@ -25,7 +25,7 @@ const NavBar = ({ authenticated, user, handleLogOut }) => {
 
   const publicOptions = (
     <nav id="navbar">
-      <NavLink id="tabs" className='tabs' to={`/tabs`}>
+      <NavLink id="tabs" className='tabs' to={`/`}>
           Tabs 2.0
         </NavLink>
         <div id="mySidenav" className="sidenav">

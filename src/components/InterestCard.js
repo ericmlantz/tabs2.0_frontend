@@ -20,13 +20,7 @@ const InterestCard = () => {
   const [searches, setSearches] = useState([])
   const [interestcard, setInterestCard] = useState([])
   const [pages, setPages] = useState([])
-  // const [updatedPages, setUpdatedPages] = useState(pages)
 
-  // const dragItem = useRef();
-  // const dragOverItem = useRef();
-  // const [pageNotes, setPageNotes] = useState([searches])
-
-  
   const getInterestCard = async (id) => {
     const res = await GetInterestByPk(id)
     setInterestCard(res)
@@ -42,11 +36,6 @@ const InterestCard = () => {
     setPages(newPages);
     navigate(`/interests/${interestcard.id}`)
   }
-
-  // const getSearchByPk = async (pk) => {
-  //   const res = await GetSearchByPk(pk)
-  //   setPageNotes(res)
-  // }
 
   const getAllSearches = async () => {
     const res = await GetAllSearches();
@@ -92,6 +81,7 @@ const InterestCard = () => {
                ? 
                <div key={page.id}>
                <PageCards interestcard={interestcard} getInterestCard={getInterestCard} page={page} pages={pages} handleRemove={handleRemove} setPages={setPages}/>
+               {/* <button onClick={() => {handleUpdate}}>Update Page</button> */}
                </div>
                 : null
               ))}

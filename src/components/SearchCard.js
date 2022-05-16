@@ -1,11 +1,7 @@
 import React from 'react'
-import { GetAllPages, UpdatePage } from '../services/PageServices'
+import { GetAllPages } from '../services/PageServices'
 
 const SearchCard = ({search, pages, interestcard}) => {
-
-  const updateNote = async (id, data) => {
-    await UpdatePage(id,data)
-  }
 
   return (
     <div>

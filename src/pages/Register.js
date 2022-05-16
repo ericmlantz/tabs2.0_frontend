@@ -40,11 +40,11 @@ const Register = () => {
   // }
   
   return (
-    <div>
+    <div className='register'>
       {/* <AlertRegistered setShow={setShow} show={show} onClose={() => setShow(false)}/> */}
-      <div className="signin-wrapper">
-        <form className="login-form" onSubmit={handleSubmit}>
-          <h1 className="signin-title">Register</h1>
+      <div className="register-wrapper">
+        <form className="register-form" onSubmit={handleSubmit}>
+          <h1 className="register-title">Register</h1>
           {/* Name */}
           <div className="form-item">
             <input
@@ -85,7 +85,7 @@ const Register = () => {
             />
           </div>
             <button className='signin-button' disabled={!formValues.email || !formValues.password}>
-              Log In
+              Register
             </button>
         </form>
       </div>

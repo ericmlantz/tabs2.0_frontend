@@ -10,7 +10,7 @@ import CreateSearchForm from './components/CreateSearchForm';
 import CreateInterestForm from './components/CreateInterestForm';
 import Register from './pages/Register'
 import Tabs from './pages/Tabs';
-import { GetAllPages } from './services/PageServices';
+import { GetAllUsers } from './services/UserServices';
 
 import { Routes, Route } from 'react-router'
 import { useState, useEffect } from 'react'
@@ -19,6 +19,7 @@ import { CheckSession } from './services/Auth'
 const App = () => {
   const [pages, setPages] = useState([])
   const [authenticated, toggleAuthenticated] = useState(false)
+  const [usersList, setUsersList] = useState([])
   const [user, setUser] = useState({
     name: '',
     email: '',
@@ -42,11 +43,10 @@ const App = () => {
   const theUserId = parseInt(localStorage.getItem('theUserId'))
   const email = localStorage.getItem('email')
 
-  const getAllPages = async () => {
-    const res = await GetAllPages();
-    setPages(res)
+  const getAllUsers = async () => {
+    const res = await GetAllUsers();
+    setUsersList(res)
   }
-
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -76,7 +76,7 @@ const App = () => {
 
         <Route path='/interests' element={<Interests theUserId={theUserId}/>} />
         
-        <Route path='/profile' element={<Profile username={username} email={email} theUserId={theUserId} />} />
+        <Route path='/profile' element={<Profile username={username} email={email} theUserId={theUserId} getAllUsers={getAllUsers} setUsersList={setUsersList} setUser={setUser} handleLogOut={handleLogOut}/>} />
         
         <Route path='/pages' element={<Pages />} />
         
@@ -84,6 +84,9 @@ const App = () => {
         <Route path='/createpage/:id' element={<CreatePageForm />} />
         <Route path='/createsearch/:id' element={<CreateSearchForm />} />
         
+
+        {/* <Route path='/pages/update/:id' element={<PageCard pages={pages} theUserId={theUserId}/>}/> */}
+                
         <Route path='/interests/:id' element={<InterestCard pages={pages} theUserId={theUserId}/>}/>
       </Routes>
     </div>

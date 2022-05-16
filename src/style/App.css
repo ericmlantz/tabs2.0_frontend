@@ -1,11 +1,38 @@
-.App {
-  text-align: center;
-}
 * {
   margin: 20px 10px;
   padding: 0;
 }
 
+.App {
+  text-align: center;
+}
+header {
+  margin: 0;
+}
+.tabs-header {
+  font-family: 'Michroma', sans-serif;
+
+  padding: 5px; /* 15px padding */
+  width: fit-content; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  height: auto;
+  font-size: 16px; /* Increase font size */
+  color: white; /* White text color */
+  border-radius: 5px; /* Rounded corners on the top right and bottom right side */
+  text-align: center;
+  margin: 0px auto;
+  background-color: black;
+}
+.tabs-header:hover {
+  color:#d1e751;
+}
+.tabs-intro p {
+  font-family: 'Michroma', sans-serif;
+  font-size: 14px;
+  line-height: 2;
+  width: 70%;
+  margin: 0 auto
+}
 .nav-link {
   margin: 0 5px;
 }
@@ -138,28 +165,6 @@ i {
   background-color: red; 
 }
 
-/* DRAGGABLE */
-.container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-}
-
-.box {
-  border: 3px solid #666;
-  background-color: #ddd;
-  border-radius: .5em;
-  padding: 10px;
-  cursor: move;
-}
-
-
-/* SEARCHES */
-.gcse-search {
-  width: 50%;
-  height: 10px;
-}
-
 
 /* INTEREST CARD */
 
@@ -203,4 +208,77 @@ textarea{
   border-radius: 4px;
   background-color: #f8f8f8;
   resize: none;
+}
+
+/* Register Page */
+body{
+    height: 100vh;
+    padding:0;
+    margin:0;
+}
+.register-wrapper {
+  margin: 0px 0px;
+  display: flex;
+  justify-content: center;
+}
+.register-form input {
+  width: 500px;
+  border: 3px solid #26ade4;
+  border-radius: 5px;
+  padding: 8px;
+}
+.register-title {
+  font-family: 'Michroma', sans-serif;
+
+  padding: 15px; /* 15px padding */
+  width: fit-content; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Increase font size */
+  color: black; /* White text color */
+  border-radius: 5px; /* Rounded corners on the top right and bottom right side */
+  text-align: center;
+  margin: 0 auto;
+  background-color: #26ade4;
+}
+.register-form button {
+  font-family: 'Michroma', sans-serif;
+width: fit-content;
+  margin: 0 0;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: #d1e751;
+}
+
+/* Register Page */
+.signin-wrapper {
+  margin: 0px 0px;
+  display: flex;
+  justify-content: center;
+}
+.login-form input {
+  width: 500px;
+  border: 3px solid #d1e751;
+  border-radius: 5px;
+  padding: 8px;
+}
+.signin-title {
+  font-family: 'Michroma', sans-serif;
+
+  padding: 15px; /* 15px padding */
+  width: fit-content; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Increase font size */
+  color: black; /* White text color */
+  border-radius: 5px; /* Rounded corners on the top right and bottom right side */
+  text-align: center;
+  margin: 0 auto;
+  background-color: #d1e751;
+}
+.login-form button {
+  font-family: 'Michroma', sans-serif;
+width: fit-content;
+  margin: 0 0;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: #26ade4;
 }

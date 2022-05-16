@@ -27,10 +27,9 @@ export const DeletePage = async (id) => {
     }
   }
 
-export const UpdatePage = async (id) => {
-  try {
-    const res = await Client.put(`http://localhost:3001/pages/update/${id}`)
-    return res.data
+  export const UpdatePage = async (pk, data) => {
+    try {
+      const res = await Client.put(`/user/update/${pk}`, data)
     } catch (error) {
       throw error
     }
