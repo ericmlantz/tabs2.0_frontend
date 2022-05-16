@@ -19,11 +19,8 @@ const App = () => {
   const [pages, setPages] = useState([])
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState({
-    id: 1,
     name: '',
-    email: '',
-    passwordDigest: '',
-    
+    email: '', 
   })
   
   const handleLogOut = () => {
