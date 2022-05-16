@@ -53,10 +53,8 @@ const Profile = ({ user, theUserId, username, setUser, email, handleLogOut}) => 
   return (
     <div className='delete-wrapper'>
     <div className="profile-page">
-      <div className="initial-box">
-        <p className="welcome-name">
-          Welcome
-        </p>
+      <div className="login-title">
+          Welcome {username}
       </div>
       <form className="profile-form">
         <label className="profile-item" htmlFor="name">

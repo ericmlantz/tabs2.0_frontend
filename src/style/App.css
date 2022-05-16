@@ -343,6 +343,7 @@ i {
   margin-top: 10px;
 }
 
+/* Misc */
 .note-card {
   border: 1px solid black;
 }
@@ -378,4 +379,100 @@ i {
   font-family: 'Michroma', sans-serif;
   margin: 20px auto 10px auto;
   font-size: 16px;
+}
+
+/* Profile Page */
+
+.delete-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 50px 0px 10px 0px;
+  background: white;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.profile-form {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.profile-item {
+  width: 400px;
+  margin: 8px 0px 8px 0px;
+}
+.profile-input {
+  width: fit-content;
+  font-family: 'Michroma', sans-serif;
+  margin: auto;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  text-align: center;
+}
+.profile-form input {
+  border-bottom: 2px solid black;
+}
+.profile-form label {
+  font-family: 'Michroma', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+.profile-input-updating {
+  font-family: 'Michroma', sans-serif;
+  margin: 0px 0px 0px 10px;
+  width: 400px;
+  background: white;
+  border: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.profile-form button {
+  font-family: 'Michroma', sans-serif;
+  background: #28ace4;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  padding: 15px 15px;
+  margin: 0px auto;
+  margin-top: 10px;
+  width: fit-content;
+}
+.delete-hiding {
+  display: none;
+}
+.delete-showing {
+  font-family: 'Michroma', sans-serif;
+  background: red;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  padding: 15px 15px;
+  margin: 0px auto;
+  width: fit-content;
+  margin-top: 0px;
 }
