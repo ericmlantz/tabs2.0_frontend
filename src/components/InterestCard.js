@@ -52,7 +52,7 @@ const InterestCard = () => {
     <div>
       <h1 className='interestcard-topic-header'>{interestcard.topic}</h1>
       <section className='searches-list'>
-        <h3>Searches</h3>
+        <p className='interest-card-topic'>Searches</p>
         <Link className="create-new-button" to={`/createsearch/${id}`}><span>Add A Note</span></Link>
         <ClientOnly> 
           <GSearch /> 

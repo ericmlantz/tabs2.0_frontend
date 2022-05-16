@@ -14,9 +14,8 @@ const Interests = ({theUserId}) => {
   }, [])
   return (
     <div>
-      <h1>Interests</h1>
+      <h1 className='webpage-title'>Interests</h1>
       <Link className="create-new-button" to={'/createinterest'}><span>Create New Interest</span></Link>
-      <ul>
       {interests &&
       interests.map((interest) => (
         interest.userId === theUserId
@@ -29,7 +28,6 @@ const Interests = ({theUserId}) => {
         </div>
         : null
       ))}
-      </ul>
     </div>
   )
 }
