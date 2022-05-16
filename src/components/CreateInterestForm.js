@@ -31,11 +31,9 @@ const CreateInterestForm = ({theUserId}) => {
     return (
       <div className="interest-form">
         <h1 className="createpage-title">Create A New Interest</h1>
-        <br/>
-        <form className='register-form'onSubmit={handleSubmit}>
+        <form className='register-form interest'onSubmit={handleSubmit}>
           <div className='interest-form'>
             <label className='section-name'><b>Interest Topic:</b></label>
-            <br/>
             <input
               name='topic'
               type="text"

@@ -221,9 +221,10 @@ i {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: left;
+  justify-content: top;
   width:500px
 }
+
 
 .interest-form input {
   width: 500px;
@@ -368,7 +369,7 @@ i {
 .createpage-title {
   font-family: 'Michroma', sans-serif;
   font-size: 30px; /* Increase font size */margin: 20px 10px;
-  color:#28ace4;
+  color:#28ace4
 }
 
 .section-title {
@@ -475,4 +476,8 @@ i {
   margin: 0px auto;
   width: fit-content;
   margin-top: 0px;
+}
+
+.interest {
+  margin: 0px auto;
 }
