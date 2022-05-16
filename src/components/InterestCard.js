@@ -74,7 +74,7 @@ const InterestCard = () => {
       <p className='google-header'>Pages</p>
         <Link className="create-new-button" to={`/createpage/${id}`}><span>Create New Page</span></Link>
         </section>
-            <ul>
+            <ul className='page-cards-view'>
           {pages &&
             pages.map((page, index) => (
               page.interestId === interestcard.id

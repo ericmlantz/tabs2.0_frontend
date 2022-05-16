@@ -350,12 +350,11 @@ i {
   }
 .page-container {
   width: fit-content;
-  height: 200px;
   background-color: #28ace4;
   padding: 20px;
   border-radius: 5px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  margin: 5px auto;
+  margin: 10px auto;
 }
 .gcse-search {
   width: 50%;
@@ -519,6 +518,16 @@ i {
   border: none;
   padding: 10px 10px;
   width: fit-content;
-  margin-top: 50px;
-
+  margin-top: 5px;
+}
+.page-cards-view {
+  padding: 0;
+}
+.page-links{
+  color: white;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.page-links:hover{
+  color: #c6c6c6;
+  font-family:Arial, Helvetica, sans-serif;
 }

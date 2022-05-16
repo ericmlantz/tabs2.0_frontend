@@ -3,9 +3,8 @@ const PageCards = ({page, pages, setPages, getInterestCard, interestcard, handle
   return (
     <div className='page-container'>
       <div className="note-title"><b>{page.title}</b><br/>
-      {page.url}
+      <a className='page-links' href={page.url}>{page.url}</a>
       <div>
-
         <button className='delete-page' onClick={() => handleRemove(page.id)}>Delete Page</button>
       </div>
       </div>
