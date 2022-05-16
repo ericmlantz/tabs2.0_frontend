@@ -51,12 +51,14 @@ const InterestCard = () => {
   return (
     <div>
       <h1 className='webpage-title'>{interestcard.topic}</h1>
-      <section className='searches-list'>
-        <p className='section-title'>Searches</p>
-        <Link className="create-new-button" to={`/createsearch/${id}`}><span>Add A Note</span></Link>
-        <ClientOnly> 
+      <p className="google-header">Search Google</p>
+      <ClientOnly> 
           <GSearch /> 
         </ClientOnly>
+      <section className='searches-list'>
+        <p className='google-header'>Searches</p>
+        <Link className="create-new-button" to={`/createsearch/${id}`}><span>Add A Note</span></Link>
+
         <ul>
           {searches &&
             searches.map((search, index) => (
@@ -71,7 +73,7 @@ const InterestCard = () => {
             </ul>
       </section>
       <section className='pages-view'>
-      <p className='section-title'>Pages</p>
+      <p className='google-header'>Pages</p>
         <Link className="create-new-button" to={`/createpage/${id}`}><span>Create New Page</span></Link>
         </section>
             <ul>

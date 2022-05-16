@@ -33,13 +33,14 @@ const CreateSearchForm = () => {
     navigate(`/interests/${id}`)
   }
     return (
-      <div>
+      <div className="interest-form">
         <h1 className="createpage-title" >Create New Note</h1>
         <br/>
-        <form onSubmit={handleSubmit}>
+        <form className="register-form interest" onSubmit={handleSubmit}>
           <div>
             <label><b>Name:</b></label>
             <input
+            className="input-form-input"
               name='noteName'
               type="text"
               value={formValues.noteName}

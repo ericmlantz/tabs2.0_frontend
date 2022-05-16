@@ -219,15 +219,17 @@ i {
 
 .interest-form {
   display: flex;
+  box-sizing: border-box;
   flex-direction: column;
-  flex-wrap: nowrap;
   justify-content: top;
-  width:500px
+  width:500px;
+  margin: 0 auto;
 }
 
 
 .interest-form input {
-  width: 500px;
+  width: auto;
+  margin: 0;
 }
 
 .register-form textarea{
@@ -356,8 +358,6 @@ i {
 .gcse-search {
   width: 50%;
   height: 10%;
-  margin: 0 0;
-  padding: 0 0;
 }
 
 .webpage-title {
@@ -480,4 +480,12 @@ i {
 
 .interest {
   margin: 0px auto;
+}
+.interest-form input {
+  margin: 0px;
+}
+.google-header {
+  margin: 0px 0px 5px 0px;
+  font-family: 'Michroma', sans-serif;
+  font-weight: bold;
 }
