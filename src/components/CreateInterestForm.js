@@ -33,7 +33,7 @@ const CreateInterestForm = ({theUserId}) => {
         <h1 className="createpage-title">Create A New Interest</h1>
         <br/>
         <form className='register-form'onSubmit={handleSubmit}>
-          <div classname='interest-form'>
+          <div className='interest-form'>
             <label className='section-name'><b>Interest Topic:</b></label>
             <br/>
             <input
@@ -55,7 +55,7 @@ const CreateInterestForm = ({theUserId}) => {
             />
           </div>
           <div className="button-wrapper">
-            <button className="submit-button" type="submit">Submit</button>
+            <button className="submit-button" type="submit" disabled={!formValues.topic}>Submit</button>
           </div>
         </form>
       </div>

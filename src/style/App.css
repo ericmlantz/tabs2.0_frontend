@@ -317,7 +317,14 @@ width: fit-content;
   border-radius: 8px;
   background-color: #26ade4;
 }
-
+.note-card {
+  border: 1px solid black;
+}
+.page-container {
+  width: 400px;
+  margin: 10px;
+  border: 1px solid black;
+}
 .gcse-search {
   width: 50%;
   height: 10%;

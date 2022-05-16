@@ -3,6 +3,7 @@ import Axios from "axios";
 export const BASE_URL = "http://localhost:3001";
 
 const Client = Axios.create({ baseURL: BASE_URL });
+// let apiUrl = process.env.NODE_ENV === 'production' ? 'https://tabs2-backend.herokuapp.com/' : 'https://localhost:3001'
 
 Client.interceptors.request.use(
   (config) => {

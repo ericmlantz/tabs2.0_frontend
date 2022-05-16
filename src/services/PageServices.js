@@ -29,7 +29,7 @@ export const DeletePage = async (id) => {
 
   export const UpdatePage = async (pk, data) => {
     try {
-      const res = await Client.put(`/user/update/${pk}`, data)
+      const res = await Client.put(`/pages/update/${pk}`, data)
     } catch (error) {
       throw error
     }

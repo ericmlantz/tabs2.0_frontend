@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 
-const Profile = ({ user, theUserId, setUser, username, email, handleLogOut}) => {
+const Profile = ({ user, setTheUserId, username, setUser, setUsername, setEmail, handleLogOut}) => {
   const [formStatus, setFormStatus] = useState(true)
   const [updateBtn, setUpdateBtn] = useState('Enable Update')
   const [updateClass, setUpdateClass] = useState('profile-input')
@@ -20,13 +20,15 @@ const Profile = ({ user, theUserId, setUser, username, email, handleLogOut}) => 
 
   const enableUpdate = (e) => {
     e.preventDefault()
-
     if (updateBtn === 'Update') {
-      updateUser(id, user)
+      updateUser(id, username)
+      console.log(user)
       setUpdateClass('profile-input')
       setDeleteBtn('delete-hiding')
       setFormStatus(true)
       setUpdateBtn('Enable Update')
+      const myuser = localStorage.setItem('username',user.name)
+      console.log('myuser:',myuser)
       navigate(`/users/${id}`)
     }
 
@@ -41,8 +43,13 @@ const Profile = ({ user, theUserId, setUser, username, email, handleLogOut}) => 
   }
 
   const handleChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value })
+    setUser({ ...user, [e.target.name] : e.target.value })
+    setUsername(user.name)
   }
+  useEffect(() => {
+    setUser(user)
+  }, [])
+
 
   const handleDelete = (e) => {
     DeleteUser(user.id)
@@ -64,7 +71,6 @@ const Profile = ({ user, theUserId, setUser, username, email, handleLogOut}) => 
           <input
             className={updateClass}
             onChange={handleChange}
-            id="name"
             type="text"
             name="name"
             value={user.name}

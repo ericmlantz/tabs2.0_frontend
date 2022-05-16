@@ -1,10 +1,14 @@
 import React from 'react'
 import { GetAllPages } from '../services/PageServices'
 
-const SearchCard = ({search, pages, interestcard}) => {
+const SearchCard = ({search, page, pages, interestcard}) => {
+
+  // const handleSubmit = (id, arr) => {
+  //   e.target.value
+  // }
 
   return (
-    <div>
+    <div className='note-card'>
       <h1>{search.noteName}</h1>
       <p>{search.noteBody}</p>
   <form>
@@ -19,6 +23,7 @@ const SearchCard = ({search, pages, interestcard}) => {
       ))}
   </select>
   <input type="submit"/>
+  {/* // onSubmit={(e) => {handleSubmit(search,page)}}/> */}
 </form>
   </div>
   )

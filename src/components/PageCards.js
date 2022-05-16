@@ -6,7 +6,7 @@ import { UpdatePage } from '../services/PageServices'
 const PageCards = ({page, pages, setPages, getInterestCard, interestcard, handleRemove}) => {
 
   return (
-    <div className='container'>
+    <div className='page-container'>
       <div draggable='true' className="box">{page.title}
       <div>
         <p>{page.notes}</p>
