@@ -37,6 +37,8 @@ Portfolio Project 4: A web search and page tracking application. Take notes and 
 A Trello board was used to keep track of development progress and can be viewed [here.](https://trello.com/b/NJw6FmQ6/tabs-20)
 
 The project itself was deployed and can be viewed [here.](https://tabs2-frontend.herokuapp.com/)
+
+Link to Backend [here.](https://github.com/ericmlantz/tabs2.0_backend)
 ***
 ### ***Screenshots***
 <a id="screenshots"></a>
